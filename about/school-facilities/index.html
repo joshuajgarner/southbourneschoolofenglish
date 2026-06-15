@@ -2,6 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.google.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://southbourneschool.co.uk https://i.ytimg.com; frame-src https://www.youtube-nocookie.com https://www.google.com; connect-src 'self' https://formspree.io https://www.google.com; object-src 'none'; base-uri 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>School Facilities | Modern Classrooms & Student Spaces | Southbourne School</title>
 <meta name="description" content="Explore our facilities: 20+ smartboard classrooms with air-conditioning, a 110-seat student café, games room, cinema room and garden — 10 minutes from the beach.">
@@ -616,7 +617,7 @@ body.has-sticky{padding-bottom:72px}
     <h2>Tour our school by the sea</h2>
     <p class="lede">See the classrooms, garden, games room — and how close the beach really is.</p>
     <div class="video-wrap reveal" style="margin-top:32px">
-      <div class="yt-facade" data-vid="7K3-e03o59E" role="button" tabindex="0" aria-label="Play school tour video" style="position:relative;cursor:pointer"><img src="https://i.ytimg.com/vi/7K3-e03o59E/hqdefault.jpg" alt="School tour video" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;border-radius:inherit"><svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px" viewBox="0 0 68 48" aria-hidden="true"><path d="M66.52 7.74A8.54 8.54 0 0060.5 1.7C55.2.46 34 .46 34 .46S12.8.46 7.5 1.7a8.54 8.54 0 00-6.02 6.04C.22 13.04.22 24 .22 24s0 10.96 1.26 16.26a8.54 8.54 0 006.02 6.04C12.8 47.54 34 47.54 34 47.54s21.2 0 26.5-1.24a8.54 8.54 0 006.02-6.04C67.78 34.96 67.78 24 67.78 24s0-10.96-1.26-16.26z" fill="red"/><path d="M27.5 34.27L45.09 24 27.5 13.73z" fill="#fff"/></svg></div>
+      <div class="yt-facade" data-vid="7K3-e03o59E" role="button" tabindex="0" aria-label="Play school tour video" style="position:absolute;inset:0;cursor:pointer"><img src="https://i.ytimg.com/vi/7K3-e03o59E/hqdefault.jpg" alt="School tour video" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover"><svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px" viewBox="0 0 68 48" aria-hidden="true"><path d="M66.52 7.74A8.54 8.54 0 0060.5 1.7C55.2.46 34 .46 34 .46S12.8.46 7.5 1.7a8.54 8.54 0 00-6.02 6.04C.22 13.04.22 24 .22 24s0 10.96 1.26 16.26a8.54 8.54 0 006.02 6.04C12.8 47.54 34 47.54 34 47.54s21.2 0 26.5-1.24a8.54 8.54 0 006.02-6.04C67.78 34.96 67.78 24 67.78 24s0-10.96-1.26-16.26z" fill="red"/><path d="M27.5 34.27L45.09 24 27.5 13.73z" fill="#fff"/></svg></div>
     </div>
   </div>
 </section>
@@ -958,7 +959,7 @@ setTimeout(loadRC,5000)})()
 document.querySelectorAll(".yt-facade").forEach(function(f){
 function play(){var v=f.dataset.vid;
 f.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v+'?autoplay=1" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>';
-f.style.cursor="default"}
+f.style.cursor="default";f.style.position="relative"}
 f.addEventListener("click",play);
 f.addEventListener("keydown",function(e){if(e.key==="Enter")play()})
 })
