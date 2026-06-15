@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://southbourneschool.co.uk/sitemap.xml
