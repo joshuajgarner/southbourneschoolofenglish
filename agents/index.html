@@ -1376,5 +1376,20 @@ setTimeout(loadRC,5000)})()
 })();
 </script>
 
-</body>
+
+<script>
+(function(){
+  var bar=document.getElementById("searchBar");
+  var input=document.getElementById("globalSearch");
+  var results=document.getElementById("globalResults");
+  if(!bar||!input)return;
+
+  document.querySelectorAll(".search-open").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var isOpen=bar.classList.toggle("open");
+      if(isOpen){input.focus();if(typeof bindSearch==="function")bindSearch(input,results)}
+    });
+  });
+})();
+</script></body>
 </html>
