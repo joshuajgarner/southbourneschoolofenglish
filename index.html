@@ -167,22 +167,28 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdro
 .dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(255,255,255,.35);cursor:pointer;padding:0}
 .dots button[aria-current="true"]{background:var(--sun);transform:scale(1.25)}
 .waves{position:absolute;left:0;right:0;bottom:-1px;line-height:0;pointer-events:none}
-.waves svg{width:100%;height:80px;display:block}
-@media(min-width:760px){.waves svg{height:110px}}
+.waves svg{width:100%;height:100px;display:block}
+@media(min-width:760px){.waves svg{height:140px}}
 .waves svg{overflow:visible}
-.wave-back{animation:wave-back 7s ease-in-out infinite}
-.wave-front{animation:wave-front 5s ease-in-out infinite}
+
+
+.wave-back{animation:wave-back 8s ease-in-out infinite}
+.wave-mid{animation:wave-mid 6s ease-in-out infinite}
+.wave-front{animation:wave-front 4.5s ease-in-out infinite}
 @keyframes wave-back{
-  0%,100%{transform:translateX(0)}
-  25%{transform:translateX(-30px)}
-  50%{transform:translateX(5px)}
-  75%{transform:translateX(30px)}
+  0%{transform:translateX(0)}
+  50%{transform:translateX(-50px)}
+  100%{transform:translateX(0)}
+}
+@keyframes wave-mid{
+  0%{transform:translateX(0)}
+  50%{transform:translateX(40px)}
+  100%{transform:translateX(0)}
 }
 @keyframes wave-front{
-  0%,100%{transform:translateX(0)}
-  25%{transform:translateX(25px)}
-  50%{transform:translateX(-8px)}
-  75%{transform:translateX(-30px)}
+  0%{transform:translateX(0)}
+  50%{transform:translateX(-35px)}
+  100%{transform:translateX(0)}
 }
 
 /* ====== GENERIC PAGE HERO (course pages) ====== */
@@ -655,6 +661,46 @@ body.theme-junior .dots button[aria-current="true"]{background:var(--leaf)}
 .mob-btns{padding:18px;border-top:1px solid var(--line);display:grid;gap:10px;flex:none;margin-top:auto}
 .mob-btns .btn{width:100%;justify-content:center}
 @media(min-width:1020px){.mob-overlay,.mob-panel{display:none !important}}
+
+/* ====== QUOTE FORM FIXES ====== */
+.q-form{overflow:hidden}
+.q-form fieldset{padding:0;margin:0}
+.q-form input[type=text],.q-form input[type=email],.q-form input[type=tel],
+.q-form input[type=number],.q-form select,.q-form textarea{
+  box-sizing:border-box;max-width:100%;min-width:0}
+.q-form input[type=date]{box-sizing:border-box;max-width:100%;min-width:0;padding:0 10px}
+.q-form select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233D5A85' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.choice{gap:16px;padding:14px 16px;align-items:flex-start;line-height:1.4}
+.choice input[type=checkbox],.choice input[type=radio]{
+  width:22px;height:22px;min-width:22px;min-height:22px;margin:0;margin-top:1px;flex:none;cursor:pointer;
+  accent-color:#29ABE2}
+.choice span{flex:1;min-width:0}
+.choice small{margin-top:2px}
+@media(max-width:680px){
+  .q-form{padding:18px;border-radius:16px}
+  .q-form legend{font-size:18px;padding-top:18px}
+  .q-grid2{grid-template-columns:1fr !important}
+  .q-form input[type=text],.q-form input[type=email],.q-form input[type=tel],
+  .q-form input[type=date],.q-form input[type=number],.q-form select{height:46px;font-size:16px}
+  .q-form textarea{font-size:16px}
+  .choice{padding:12px 14px;font-size:14px;gap:14px}
+  .choice-grid{grid-template-columns:1fr !important}
+}
+
+/* ====== ACCESSIBILITY FIXES ====== */
+.dots button{width:24px;height:24px;border-radius:50%;padding:0;position:relative}
+.dots button::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35)}
+.dots button[aria-current="true"]::after{background:var(--sun);width:12px;height:12px}
+.dots button{background:transparent !important}
+.eyebrow{color:#1B6FA8}
+.hero .eyebrow,.page-hero .eyebrow{color:#8FD4FF}
+.band .eyebrow,.band-green .eyebrow{color:#0E5A9E}
+.band-green .eyebrow{color:#2B6E30}
+.band .review-meta a{color:#0E5A9E;text-decoration:underline}
+body.theme-junior .eyebrow{color:#2B6E30}
+body.theme-junior .page-hero .eyebrow{color:#A0E88A}
+.mega-col h4{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.mega-label{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px;color:var(--ink-soft)}
 </style>
 
 <link rel="preload" as="image" href="https://southbourneschool.co.uk/wp-content/uploads/2019/02/7-e1739878268543.jpg" fetchpriority="high">
@@ -691,14 +737,14 @@ body.theme-junior .dots button[aria-current="true"]{background:var(--leaf)}
         <a href="/southbourneschoolofenglish/english-courses/">English Courses <span class="arrow-d" aria-hidden="true">▾</span></a>
         <div class="dropdown mega">
           <div class="mega-col adult">
-            <h4><span class="dot"></span> Adult Courses (Age 15+)</h4>
+            <span class="mega-label"><span class="dot"></span> Adult Courses (Age 15+)</span>
             <a href="/southbourneschoolofenglish/english-courses/adult-language-courses/general-intensive/">General &amp; Intensive English</a>
             <a href="/southbourneschoolofenglish/english-courses/adult-language-courses/one-to-one-english/">One-to-One English</a>
             <a href="/southbourneschoolofenglish/english-courses/adult-language-courses/summer-vacation-courses/">Adult Summer English</a>
             <a href="/southbourneschoolofenglish/english-courses/adult-language-courses/cambridge-examination-courses/">Cambridge Exam Courses</a>
           </div>
           <div class="mega-col junior">
-            <h4><span class="dot"></span> Junior Courses (Age 9+)</h4>
+            <span class="mega-label"><span class="dot"></span> Junior Courses (Age 9+)</span>
             <a href="/southbourneschoolofenglish/english-courses/junior-language-courses/summer-courses/">Junior Summer English</a>
             <a href="/southbourneschoolofenglish/english-courses/junior-language-courses/year-round-group-courses/">Group English Courses</a>
           </div>
@@ -901,9 +947,10 @@ body.theme-junior .dots button[aria-current="true"]{background:var(--leaf)}
       </div>
     </div>
   </div>
-  <div class="waves" aria-hidden="true"><svg viewBox="-80 0 1600 110" preserveAspectRatio="none">
-    <path class="wave-back" fill="rgba(255,255,255,.35)" d="M-80,60 C100,100 280,20 460,45 C640,70 820,110 1000,80 C1180,50 1300,70 1520,60 L1520,110 L-80,110 Z"/>
-    <path class="wave-front" fill="#FFFFFF" d="M-80,80 C120,50 340,105 560,85 C780,65 1000,40 1200,70 C1300,84 1360,78 1520,72 L1520,110 L-80,110 Z"/></svg></div>
+  <div class="waves" aria-hidden="true"><svg viewBox="-120 0 1680 130" preserveAspectRatio="none">
+    <path class="wave-back" fill="rgba(255,255,255,.3)" d="M-120,85 C0,40 120,110 300,70 C480,30 600,100 780,60 C960,20 1100,90 1280,55 C1400,30 1500,70 1560,50 L1560,130 L-120,130 Z"/>
+    <path class="wave-mid" fill="rgba(255,255,255,.5)" d="M-120,75 C60,105 180,45 360,80 C540,115 660,35 840,70 C1020,105 1140,40 1320,75 C1440,100 1520,60 1560,65 L1560,130 L-120,130 Z"/>
+    <path class="wave-front" fill="#FFFFFF" d="M-120,95 C80,60 240,115 420,80 C600,45 720,105 900,75 C1080,45 1240,100 1380,70 C1480,50 1540,80 1560,75 L1560,130 L-120,130 Z"/></svg></div>
 </div>
 
 <section id="courses">
@@ -1161,14 +1208,14 @@ if(stack){
   let cur=0;
   slides.forEach((_,i)=>{
     const b=document.createElement("button");
-    b.setAttribute("aria-label","Go to slide "+(i+1));
+    b.setAttribute("aria-label","Go to slide "+(i+1));b.setAttribute("role","tab");
     b.addEventListener("click",()=>go(i));dots.appendChild(b);
   });
   function layout(){
     slides.forEach((s,i)=>{
       const rel=i-cur;
       s.dataset.pos = rel<0 ? "gone" : rel>2 ? "behind" : String(rel);
-      s.setAttribute("aria-hidden",rel!==0);
+      s.setAttribute("aria-hidden",rel!==0);s.querySelectorAll("a,button").forEach(function(el){el.setAttribute("tabindex",rel===0?"0":"-1")});
     });
     prev.disabled=cur===0;next.disabled=cur===slides.length-1;
     [...dots.children].forEach((d,i)=>d.setAttribute("aria-current",i===cur));
@@ -1325,5 +1372,6 @@ setTimeout(loadRC,5000)})()
   panel.querySelectorAll("a").forEach(function(a){a.addEventListener("click",close)});
 })();
 </script>
+
 </body>
 </html>
