@@ -964,10 +964,7 @@ body.theme-junior .dots button[aria-current="true"]{background:var(--leaf)}
     <h2>A tour you can share</h2>
     <p class="lede">Send this 90-second school tour straight to your clients — classrooms, garden, games room and the beach.</p>
     <div class="video-wrap reveal" style="margin-top:32px">
-      <div class="yt-facade" data-vid="7K3-e03o59E" role="button" tabindex="0" aria-label="Play school tour video" style="position:relative;cursor:pointer">
-  <img src="https://i.ytimg.com/vi/7K3-e03o59E/hqdefault.jpg" alt="School tour video" loading="lazy" decoding="async" style="width:100%;height:100%;object-fit:cover;border-radius:inherit">
-  <svg style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px" viewBox="0 0 68 48" aria-hidden="true"><path d="M66.52 7.74A8.54 8.54 0 0060.5 1.7C55.2.46 34 .46 34 .46S12.8.46 7.5 1.7a8.54 8.54 0 00-6.02 6.04C.22 13.04.22 24 .22 24s0 10.96 1.26 16.26a8.54 8.54 0 006.02 6.04C12.8 47.54 34 47.54 34 47.54s21.2 0 26.5-1.24a8.54 8.54 0 006.02-6.04C67.78 34.96 67.78 24 67.78 24s0-10.96-1.26-16.26z" fill="red"/><path d="M27.5 34.27L45.09 24 27.5 13.73z" fill="#fff"/></svg>
-</div>
+      <iframe src="https://www.youtube-nocookie.com/embed/7K3-e03o59E" title="Tour of Southbourne School of English" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>
     </div>
   </div>
 </section>
@@ -1302,33 +1299,7 @@ document.querySelectorAll("form").forEach(function(f){
 f.addEventListener("focusin",loadRC,{once:true})});
 setTimeout(loadRC,5000)})()
 </script>
-<script>
-document.querySelectorAll(".yt-facade").forEach(function(f){
-  function play(){var v=f.dataset.vid;
-    f.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+v+'?autoplay=1" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>';
-    f.style.cursor="default"}
-  f.addEventListener("click",play);
-  f.addEventListener("keydown",function(e){if(e.key==="Enter")play()})
-})
 
-/* ===== Search overlay ===== */
-document.querySelectorAll(".search-open").forEach(function(b){
-  b.addEventListener("click",function(){
-    var bar=document.getElementById("searchBar");
-    var isOpen=bar.classList.toggle("open");
-    if(isOpen){
-      var inp=document.getElementById("globalSearch");
-      inp.focus();
-      if(typeof bindSearch==="function")bindSearch(inp,document.getElementById("globalResults"));
-    }
-  });
-});
-
-
-/* ===== Mobile menu (self-contained) ===== */
-
-
-</script>
 
 <script>
 (function(){
