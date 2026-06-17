@@ -937,7 +937,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 <section class="fact-strip"><div class="wrap"><div class="fact-grid"><div><b>Local</b><span>Southbourne &amp; nearby</span></div><div><b>Paid</b><span>Promptly, every time</span></div><div><b>24/7</b><span>School support line</span></div><div><b>You choose</b><span>Ages, dates, duration</span></div></div></div></section>
 <section>
   <div class="wrap two-col">
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/02/Students-with-host-family-at-dinner-scaled-768x768.jpg" alt="Students laughing at dinner with their British host family" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="768" height="768" decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/02/Students-with-host-family-at-dinner-scaled-768x768.jpg" alt="Students laughing at dinner with their British host family" loading="lazy"></div>
     <div>
       <span class="eyebrow">How it works</span>
       <h2>Three steps to your first student</h2>
@@ -1204,8 +1204,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

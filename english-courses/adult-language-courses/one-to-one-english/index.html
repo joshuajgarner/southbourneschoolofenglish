@@ -707,7 +707,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="dns-prefetch" href="https://i.ytimg.com">
-<link rel="preload" as="image" href="https://southbourneschool.co.uk/wp-content/uploads/2026/02/Female-student-using-interactive-screen-768x768.jpeg" fetchpriority="high">
+<link rel="preload" as="image" href="/southbourneschoolofenglish/img/photos/students-front-1.webp" fetchpriority="high">
 </head>
 <body class="has-sticky">
 
@@ -942,7 +942,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
       <h2>What you'll get</h2>
       <ul class="check-list"><li><span class="tick">✓</span><div><b>A personal learning plan</b><span class="sub">Your teacher assesses your level and designs a programme around exactly what you need.</span></div></li><li><span class="tick">✓</span><div><b>100% talking time</b><span class="sub">No waiting your turn — every minute of every lesson is focused on you.</span></div></li><li><span class="tick">✓</span><div><b>Any specialism</b><span class="sub">Business English, aviation, medicine, academic writing, interview practice or pure conversation.</span></div></li><li><span class="tick">✓</span><div><b>Combine with group classes</b><span class="sub">Many students add one-to-one lessons to a General English course for targeted progress.</span></div></li></ul>
     </div>
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2026/02/Female-student-using-interactive-screen-768x768.jpeg" alt="Student using an interactive smartboard with a teacher" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="768" height="768" decoding="async" src="/southbourneschoolofenglish/img/photos/students-front-1.webp" alt="Student using an interactive smartboard with a teacher" loading="lazy"></div>
   </div>
 </section>
 <section class="band">
@@ -1190,8 +1190,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

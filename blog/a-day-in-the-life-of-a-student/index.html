@@ -929,7 +929,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 </div>
 <section>
   <div class="wrap" style="max-width:760px">
-    <div class="round-photo reveal" style="aspect-ratio:16/9;margin-bottom:36px"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/Adult-student-in-class-with-teacher-scaled-768x768.jpg" alt="Adult student in class with a teacher" loading="lazy"></div>
+    <div class="round-photo reveal" style="aspect-ratio:16/9;margin-bottom:36px"><img width="768" height="768" decoding="async" src="/southbourneschoolofenglish/img/photos/students-parasol.webp" alt="Adult student in class with a teacher" loading="lazy"></div>
     <h2>08:00 — Breakfast with your host family</h2><p>Toast, tea and conversation — your first English practice of the day happens before you've left the house.</p>
  <h2>08:45 — The walk to school</h2><p>Every host family is within walking distance or a short bus ride. Most students walk with friends they've made in class.</p>
  <h2>09:00 — Morning lessons</h2><p>Three hours of communicative English in smartboard classrooms, with a coffee break in the café halfway through. Speaking first, grammar in context, no dozing at the back.</p>
@@ -1154,8 +1154,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

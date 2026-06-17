@@ -942,7 +942,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
       <h2>What you'll get</h2>
       <ul class="check-list"><li><span class="tick">✓</span><div><b>Afternoon English lessons</b><span class="sub">Communicative classes that build real confidence — taught by teachers who love working with young learners.</span></div></li><li><span class="tick">✓</span><div><b>Packed activity programme</b><span class="sub">Morning sports, local trips, beach games, and arts, evening discos and quizzes — energy well spent, friendships well made.</span></div></li><li><span class="tick">✓</span><div><b>Full-day excursions</b><span class="sub">London, Oxford, Bath and the best of the Dorset coast, fully supervised.</span></div></li><li><span class="tick">✓</span><div><b>Safety first, always</b><span class="sub">Enhanced safeguarding checks, clear ratios, and a welfare phone answered 24/7.</span></div></li></ul>
     </div>
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/Football-Tournament-ali-999x999.jpg" alt="Junior student playing football at a school activity" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="999" height="999" decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/Football-Tournament-ali-999x999.jpg" alt="Junior student playing football at a school activity" loading="lazy"></div>
   </div>
 </section>
 <section class="band">
@@ -1190,8 +1190,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

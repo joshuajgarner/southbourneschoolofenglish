@@ -941,7 +941,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
         <li><span class="tick">✓</span><div><b>Bournemouth on tap</b><span class="sub">A lively university town with Victorian gardens, a Blue Flag beach, shopping and nightlife — 15 minutes by bus.</span></div></li>
       </ul>
     </div>
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2024/02/25-Southbourne-Beach-682x682.jpg" alt="Southbourne Beach on a sunny day" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="682" height="682" decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2024/02/25-Southbourne-Beach-682x682.jpg" alt="Southbourne Beach on a sunny day" loading="lazy"></div>
   </div>
 </section>
 <section class="band">
@@ -1173,8 +1173,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

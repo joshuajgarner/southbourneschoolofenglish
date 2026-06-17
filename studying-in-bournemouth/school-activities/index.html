@@ -938,7 +938,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 </section>
 <section class="band-green">
   <div class="wrap two-col">
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2020/12/Sunset-volleyball-on-Bournemouth-beach-please-credit-BCP-Tourism-681x681.jpg" alt="Sunset volleyball on Bournemouth Beach" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="681" height="681" decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2020/12/Sunset-volleyball-on-Bournemouth-beach-please-credit-BCP-Tourism-681x681.jpg" alt="Sunset volleyball on Bournemouth Beach" loading="lazy"></div>
     <div>
       <span class="eyebrow">Why it matters</span>
       <h2>Activities are English lessons in disguise</h2>
@@ -1175,8 +1175,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

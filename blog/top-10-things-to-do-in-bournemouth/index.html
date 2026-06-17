@@ -929,7 +929,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 </div>
 <section>
   <div class="wrap" style="max-width:760px">
-    <div class="round-photo reveal" style="aspect-ratio:16/9;margin-bottom:36px"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2024/02/25-Southbourne-Beach-682x682.jpg" alt="Southbourne Beach on a sunny day" loading="lazy"></div>
+    <div class="round-photo reveal" style="aspect-ratio:16/9;margin-bottom:36px"><img width="682" height="682" decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2024/02/25-Southbourne-Beach-682x682.jpg" alt="Southbourne Beach on a sunny day" loading="lazy"></div>
     <h2>1. The beach (obviously)</h2><p>Seven miles of sand from Hengistbury Head to Sandbanks. Southbourne's stretch — ten minutes from school — is the quiet, local one. Bournemouth's central beach has the buzz, the pier and the deckchairs.</p>
  <h2>2. Hengistbury Head</h2><p>Our favourite walk: a nature reserve headland with views across to the Isle of Wight, a land train, and the photogenic beach huts of Mudeford Spit.</p>
  <h2>3. The Lower Gardens</h2><p>Victorian gardens running from the town centre to the pier — follow the River Bourne, catch a band on the bandstand, and watch the balloon rise.</p>
@@ -1157,8 +1157,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

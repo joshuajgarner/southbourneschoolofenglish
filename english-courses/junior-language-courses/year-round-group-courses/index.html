@@ -707,7 +707,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="dns-prefetch" href="https://i.ytimg.com">
-<link rel="preload" as="image" href="https://southbourneschool.co.uk/wp-content/uploads/2024/02/26-School-Photo-January-2023-731x731.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/southbourneschoolofenglish/img/photos/students-front-3.webp" fetchpriority="high">
 </head>
 <body class="has-sticky theme-junior">
 
@@ -942,7 +942,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
       <h2>What you'll get</h2>
       <ul class="check-list"><li><span class="tick">✓</span><div><b>A programme built for your group</b><span class="sub">Tell us your dates, budget and aims — we design lessons, activities and excursions around them.</span></div></li><li><span class="tick">✓</span><div><b>Lessons that complement school</b><span class="sub">Communicative English classes that energise students and align with CEFR levels.</span></div></li><li><span class="tick">✓</span><div><b>Cultural excursions</b><span class="sub">London, Oxford, Bath, Stonehenge — plus the beaches and nature of the Dorset coast.</span></div></li><li><span class="tick">✓</span><div><b>Group leaders looked after</b><span class="sub">Free leader places, leader programmes and a single point of contact throughout.</span></div></li></ul>
     </div>
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2024/02/26-School-Photo-January-2023-731x731.jpg" alt="A visiting school group photographed in the school garden" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="731" height="731" decoding="async" src="/southbourneschoolofenglish/img/photos/students-front-3.webp" alt="A visiting school group photographed in the school garden" loading="lazy"></div>
   </div>
 </section>
 <section class="band">
@@ -1190,8 +1190,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

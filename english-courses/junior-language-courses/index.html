@@ -936,7 +936,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 </section>
 <section class="band">
   <div class="wrap two-col">
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/Football-Tournament-ali-999x999.jpg" alt="Junior student playing football on the activity programme" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="999" height="999" decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/Football-Tournament-ali-999x999.jpg" alt="Junior student playing football on the activity programme" loading="lazy"></div>
     <div>
       <span class="eyebrow">Parents first</span>
       <h2>Safety isn't a feature. It's the foundation.</h2>
@@ -1176,8 +1176,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

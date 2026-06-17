@@ -707,7 +707,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="dns-prefetch" href="https://i.ytimg.com">
-<link rel="preload" as="image" href="https://southbourneschool.co.uk/wp-content/uploads/2025/04/Adult-student-in-class-with-teacher-scaled-768x768.jpg" fetchpriority="high">
+<link rel="preload" as="image" href="/southbourneschoolofenglish/img/photos/students-parasol.webp" fetchpriority="high">
 </head>
 <body class="has-sticky">
 
@@ -1000,7 +1000,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
         <li><span class="tick">3</span><div><b>Move up as you improve</b><span class="sub">Regular progress checks mean you move up a level the moment you're ready.</span></div></li>
       </ul>
     </div>
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/Adult-student-in-class-with-teacher-scaled-768x768.jpg" alt="Adult student in class with a teacher" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="768" height="768" decoding="async" src="/southbourneschoolofenglish/img/photos/students-parasol.webp" alt="Adult student in class with a teacher" loading="lazy"></div>
   </div>
 </section>
 
@@ -1214,8 +1214,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

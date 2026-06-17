@@ -931,7 +931,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
 </div>
 <section>
   <div class="wrap two-col">
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/02/Students-with-host-family-at-dinner-scaled-768x768.jpg" alt="Two students laughing at dinner with their British host family" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="768" height="768" decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/02/Students-with-host-family-at-dinner-scaled-768x768.jpg" alt="Two students laughing at dinner with their British host family" loading="lazy"></div>
     <div>
       <span class="eyebrow">What's included</span>
       <h2>A real home, not just a room</h2>
@@ -1183,8 +1183,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

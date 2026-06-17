@@ -967,7 +967,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
         <li><span class="tick">✓</span><div><b>A real community</b><span class="sub">Students from 40+ countries, host families who've welcomed students for decades, and staff who genuinely care.</span></div></li>
       </ul>
     </div>
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2025/03/Outside-school-501x501.jpg" alt="The school's front garden with students relaxing" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="501" height="501" decoding="async" src="/southbourneschoolofenglish/img/photos/garden-astro.webp" alt="The school garden with astro turf and parasols" loading="lazy"></div>
   </div>
 </section>
 <section class="band">
@@ -1199,8 +1199,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");

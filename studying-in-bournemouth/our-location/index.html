@@ -947,7 +947,7 @@ body.theme-junior .page-hero .eyebrow{color:#A0E88A}
         <a class="btn btn-line" href="/southbourneschoolofenglish/contact-us/">Contact us</a>
       </div>
     </div>
-    <div class="round-photo reveal"><img decoding="async" src="https://southbourneschool.co.uk/wp-content/uploads/2024/02/11-Front-of-school-731x731.jpg" alt="The front of Southbourne School of English on Beaufort Road" loading="lazy"></div>
+    <div class="round-photo reveal"><img width="731" height="731" decoding="async" src="/southbourneschoolofenglish/img/photos/front-close.webp" alt="The front of Southbourne School of English on Beaufort Road" loading="lazy"></div>
   </div>
 </section>
 
@@ -1161,8 +1161,10 @@ if(stack){
 }
 
 /* ===== Reveal on scroll ===== */
-const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+if("requestIdleCallback" in window){requestIdleCallback(function(){
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)})
+})}else{document.querySelectorAll(".reveal").forEach(function(el){el.classList.add("in")})}
 
 /* ===== WhatsApp popup ===== */
 const pop=document.querySelector(".wa-pop");
