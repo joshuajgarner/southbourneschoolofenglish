@@ -206,7 +206,7 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdro
 .fact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
 .fact-grid div{padding:6px 10px}
 .fact-grid b{font-family:var(--display);font-size:19px;display:block;color:var(--ink)}
-.fact-grid span{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+.fact-grid span{font-size:12.5px;color:var(--ink-soft);letter-spacing:.04em;font-weight:600}
 @media(min-width:760px){.fact-grid{grid-template-columns:repeat(4,1fr);padding:26px}}
 
 /* ====== CONTENT BLOCKS ====== */
@@ -219,8 +219,38 @@ header{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.94);backdro
 .check-list b{display:block}
 .check-list li span.sub{color:var(--ink-soft);font-size:14.5px}
 .tick{flex:none;width:26px;height:26px;border-radius:50%;background:var(--leaf);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px;margin-top:3px}
+
+/* ── Course Finder ── */
+.finder{margin:40px 0 48px;padding:32px;border-radius:var(--radius);background:var(--foam);border:1.5px solid var(--line)}
+.finder-step{margin-bottom:24px}
+.finder-step:last-of-type{margin-bottom:28px}
+.finder-label{display:block;font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:10px}
+.finder-options{display:flex;flex-wrap:wrap;gap:8px}
+.finder-pill{padding:9px 18px;border-radius:999px;border:2px solid #0E2A52;background:#fff;font-family:var(--body);font-size:14px;font-weight:600;color:#0E2A52;cursor:pointer;transition:all .2s ease;box-shadow:0 2px 8px rgba(14,42,82,.08);-webkit-appearance:none;appearance:none}
+.finder-pill:focus-visible{outline:2px solid #29ABE2;outline-offset:2px}
+.finder-pill:hover{border-color:#29ABE2;background:#0E2A52;color:#fff}
+.finder-pill.selected{background:#0E2A52;color:#fff;border-color:#0E2A52}
+.finder-go{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border:none;border-radius:999px;background:var(--sky);color:#fff;font-family:var(--body);font-size:15px;font-weight:700;cursor:pointer;transition:background .2s}
+.finder-go:hover{background:var(--navy)}
+.finder-go:disabled{opacity:.45;cursor:not-allowed}
+.finder-results{margin-top:28px;display:none}
+.finder-results.show{display:block}
+.finder-match{padding:20px 24px;border-radius:14px;background:#fff;border:1.5px solid var(--line);margin-bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:16px;transition:border-color .2s}
+.finder-match:hover{border-color:var(--sky)}
+.finder-match h4{font-size:17px;color:var(--navy);margin-bottom:2px}
+.finder-match p{font-size:13.5px;color:var(--ink-soft);line-height:1.45}
+.finder-match .match-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px}
+.finder-match .mp{font-size:11.5px;padding:3px 10px;border-radius:99px;background:var(--foam);color:var(--sky);font-weight:600}
+.finder-match .mp.green{background:#EDF7EA;color:var(--leaf)}
+.finder-match .mp.gold{background:#FFF8DC;color:#B8860B}
+.finder-match-link{flex-shrink:0;padding:10px 20px;border-radius:999px;background:var(--foam);color:var(--navy);font-size:13.5px;font-weight:700;text-decoration:none;transition:all .2s}
+.finder-match-link:hover{background:var(--navy);color:#fff}
+.finder-no-match{padding:20px;text-align:center;color:var(--ink-soft);font-size:15px}
+@media(max-width:600px){.finder{padding:22px 18px}.finder-match{flex-direction:column;align-items:flex-start}.finder-match-link{align-self:flex-start}}
 .card-grid{display:grid;gap:18px;margin-top:36px}
-@media(min-width:680px){.card-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:680px){
+/* ── Course Finder ── */
+.card-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:980px){.card-grid.cols3{grid-template-columns:repeat(3,1fr)}}
 .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px;transition:transform .2s,box-shadow .2s;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
@@ -976,6 +1006,39 @@ body.theme-junior .lead .lede{color:rgba(255,255,255,.82)}
     <span class="eyebrow">English courses in Bournemouth</span>
     <h2>Find your perfect course</h2>
     <p class="lede">Every programme includes expert teaching in modern, air-conditioned classrooms with interactive smartboards — plus optional homestay, activities and airport transfers.</p>
+    <div class="finder" id="course-finder">
+      <div class="finder-step">
+        <span class="finder-label">1. What's your goal?</span>
+        <div class="finder-options" data-group="goal">
+          <button class="finder-pill" data-val="general">Improve my English</button>
+          <button class="finder-pill" data-val="exam">Pass an exam</button>
+          <button class="finder-pill" data-val="summer">Summer experience</button>
+          <button class="finder-pill" data-val="professional">Professional English</button>
+          <button class="finder-pill" data-val="private">Private lessons</button>
+        </div>
+      </div>
+      <div class="finder-step">
+        <span class="finder-label">2. What's your English level?</span>
+        <div class="finder-options" data-group="level">
+          <button class="finder-pill" data-val="beginner">Beginner</button>
+          <button class="finder-pill" data-val="elementary">Elementary</button>
+          <button class="finder-pill" data-val="intermediate">Intermediate</button>
+          <button class="finder-pill" data-val="upper">Upper-intermediate</button>
+          <button class="finder-pill" data-val="advanced">Advanced</button>
+          <button class="finder-pill" data-val="unsure">Not sure</button>
+        </div>
+      </div>
+      <div class="finder-step">
+        <span class="finder-label">3. How old are you?</span>
+        <div class="finder-options" data-group="age">
+          <button class="finder-pill" data-val="junior">9–15</button>
+          <button class="finder-pill" data-val="youngadult">16–29</button>
+          <button class="finder-pill" data-val="mature">30+</button>
+        </div>
+      </div>
+      <button class="finder-go" id="finder-go" disabled>Find my course →</button>
+      <div class="finder-results" id="finder-results"></div>
+    </div>
     <h3 style="margin-top:36px;font-size:17px;color:var(--ink-soft)">Adult English courses (age 15+)</h3>
     <div class="card-grid">
       <article class="card reveal"><div class="meta-row"><span class="pill">Age 15+</span><span class="pill">15 or 21 hrs/wk</span><span class="pill gold">Year-round</span></div>
@@ -1411,6 +1474,68 @@ setTimeout(loadRC,5000)})()
       var isOpen=bar.classList.toggle("open");
       if(isOpen){input.focus();if(typeof bindSearch==="function")bindSearch(input,results)}
     });
+  });
+})();
+
+/* ── Course Finder logic ── */
+(function(){
+  var prefix = "/southbourneschoolofenglish/english-courses/";
+  var courses = [
+    {id:"gi", name:"General & Intensive English", desc:"Build confident everyday English — 15 or 21 hours per week, start any Monday.",
+     url:prefix+"adult-language-courses/general-intensive/", pills:[{t:"Age 15+",c:""},{t:"Year-round",c:"gold"}],
+     goals:["general","professional"], levels:["beginner","elementary","intermediate","upper","advanced","unsure"], ages:["youngadult","mature"]},
+    {id:"121", name:"One-to-One English", desc:"Private lessons tailored to your exact goals, pace and schedule.",
+     url:prefix+"adult-language-courses/one-to-one-english/", pills:[{t:"Age 10+",c:""},{t:"Tailored",c:"gold"}],
+     goals:["general","exam","professional","private"], levels:["beginner","elementary","intermediate","upper","advanced","unsure"], ages:["junior","youngadult","mature"]},
+    {id:"as", name:"Adult Summer English", desc:"Morning English plus afternoon activities, beach evenings and excursions.",
+     url:prefix+"adult-language-courses/summer-vacation-courses/", pills:[{t:"Age 16+",c:""},{t:"Summer",c:"green"},{t:"Activities",c:"gold"}],
+     goals:["general","summer"], levels:["beginner","elementary","intermediate","upper","advanced","unsure"], ages:["youngadult","mature"]},
+    {id:"cam", name:"Cambridge Exam Courses", desc:"Focused B2 First or C1 Advanced preparation — 4 weeks with expert teachers.",
+     url:prefix+"adult-language-courses/cambridge-examination-courses/", pills:[{t:"Age 15+",c:""},{t:"4 weeks",c:""},{t:"Fixed dates",c:"gold"}],
+     goals:["exam"], levels:["intermediate","upper","advanced"], ages:["youngadult","mature"]},
+    {id:"exec", name:"Over 30s Executive English", desc:"Premium small-group course for professionals — max 6 students, 21 hours per week.",
+     url:prefix+"adult-language-courses/over-30s-executive-english/", pills:[{t:"Age 30+",c:""},{t:"Max 6",c:"gold"},{t:"Premium",c:"gold"}],
+     goals:["professional","general"], levels:["intermediate","upper","advanced","unsure"], ages:["mature"]},
+    {id:"js", name:"Junior Summer English", desc:"Lessons, sports, beach games, discos and trips to London, Oxford and Bath.",
+     url:prefix+"junior-language-courses/summer-courses/", pills:[{t:"Ages 9–15",c:""},{t:"Summer",c:"green"},{t:"Most popular",c:"gold"}],
+     goals:["general","summer"], levels:["beginner","elementary","intermediate","upper","advanced","unsure"], ages:["junior"]},
+    {id:"gr", name:"Group English Courses", desc:"Tailor-made programmes for school groups with lessons, excursions and homestays.",
+     url:prefix+"junior-language-courses/year-round-group-courses/", pills:[{t:"Age 9+",c:""},{t:"Groups",c:""},{t:"Year-round",c:"gold"}],
+     goals:["general","summer"], levels:["beginner","elementary","intermediate","upper","advanced","unsure"], ages:["junior"]}
+  ];
+
+  var sel = {goal:null, level:null, age:null};
+  var goBtn = document.getElementById("finder-go");
+  var resultsDiv = document.getElementById("finder-results");
+
+  document.querySelectorAll(".finder-options").forEach(function(group){
+    var g = group.getAttribute("data-group");
+    group.addEventListener("click", function(e){
+      var pill = e.target.closest(".finder-pill");
+      if(!pill) return;
+      group.querySelectorAll(".finder-pill").forEach(function(p){p.classList.remove("selected");});
+      pill.classList.add("selected");
+      sel[g] = pill.getAttribute("data-val");
+      goBtn.disabled = !(sel.goal && sel.level && sel.age);
+    });
+  });
+
+  goBtn.addEventListener("click", function(){
+    var matches = courses.filter(function(c){
+      return c.goals.indexOf(sel.goal) !== -1 && c.levels.indexOf(sel.level) !== -1 && c.ages.indexOf(sel.age) !== -1;
+    });
+    var out = "";
+    if(matches.length){
+      matches.forEach(function(c){
+        var pills = c.pills.map(function(p){return '<span class="mp'+(p.c?" "+p.c:"")+'">'+p.t+'</span>';}).join("");
+        out += '<div class="finder-match"><div><h4>'+c.name+'</h4><p>'+c.desc+'</p><div class="match-pills">'+pills+'</div></div><a class="finder-match-link" href="'+c.url+'">View course →</a></div>';
+      });
+    } else {
+      out = '<div class="finder-no-match"><p>We didn\'t find an exact match — but we\'re sure we can help. <a href="#enquire" style="color:var(--sky);font-weight:700">Send us a message</a> and we\'ll recommend the best option for you.</p></div>';
+    }
+    resultsDiv.innerHTML = out;
+    resultsDiv.classList.add("show");
+    resultsDiv.scrollIntoView({behavior:"smooth",block:"nearest"});
   });
 })();
 </script></body>
