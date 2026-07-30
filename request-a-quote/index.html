@@ -683,6 +683,11 @@ body.theme-junior .dots button[aria-current="true"]{background:var(--leaf)}
 }
 
 /* ====== QUOTE FORM WIDTH & CHOICE SPACING ====== */
+.date-err{margin-top:6px;font-size:13px;font-weight:600;color:#B3261E;line-height:1.45}
+.date-err[hidden]{display:none}
+.date-note{margin-top:6px;font-size:13px;font-weight:600;color:#8A6100;background:#FFF8E4;border:1px solid #F3D98B;border-radius:10px;padding:9px 12px;line-height:1.45}
+.date-note[hidden]{display:none}
+#q-date-select[hidden],#q-date[hidden]{display:none !important}
 @media(min-width:920px){.q-form{max-width:1080px}}
 .choice{display:flex;align-items:flex-start;gap:0}
 .choice input[type=checkbox],.choice input[type=radio]{
@@ -968,19 +973,20 @@ body.theme-junior .lead .lede{color:rgba(255,255,255,.82)}
         <div>
           <label for="q-course">English course *</label>
           <select id="q-course" name="course" required>
-            <option>General English — 15 hours per week — tuition only</option>
-            <option>Intensive English — 21 hours per week — tuition only</option>
-            <option>Summer General English — 15 hours per week</option>
-            <option>Summer Intensive English — 21 hours per week</option>
-            <option>One-to-one English — 1+ hours per week</option>
-            <option>Cambridge B2 First — 21 hours per week — 4 weeks</option>
-            <option>Cambridge C1 Advanced — 21 hours per week — 4 weeks</option>
+            <option data-rule="general">General English — 15 hours per week — tuition only</option>
+            <option data-rule="general">Intensive English — 21 hours per week — tuition only</option>
+            <option data-rule="oneToOne">One-to-one English — 1+ hours per week</option>
+            <option data-rule="cambridge">Cambridge B2 First — 21 hours per week — 4 weeks</option>
+            <option data-rule="cambridge">Cambridge C1 Advanced — 21 hours per week — 4 weeks</option>
+            <option data-rule="exec">Over 30s Executive English — 21 hours per week</option>
+            <option data-rule="exec">English to Prepare for University — 21 hours per week — 4 weeks</option>
+            <option data-rule="exec">English for Content Creators — 21 hours per week</option>
           </select>
-          <p class="hint">Adults year-round; juniors summer only. Summer season: 28 June – 23 August 2026. Cambridge courses run on fixed start dates — see the price list.</p>
+          <p class="hint">Adults year-round; juniors summer only. Cambridge, Executive English, University and Content Creators courses run on fixed start dates — choose your course first and the start date field will show the dates available.</p>
         </div>
         <div class="q-grid2">
           <div><label for="q-age">Student age on arrival *</label><input type="number" id="q-age" name="student_age" min="9" max="99" required><p class="hint">The student's age at the start of the course.</p></div>
-          <div><label for="q-date">Start date *</label><input type="date" id="q-date" name="start_date" required><p class="hint">Sunday arrival/departure if accommodation is required. Courses start on Mondays (except bank holidays).</p></div>
+          <div><label for="q-date">Start date *</label><input type="date" id="q-date" name="start_date" required><select id="q-date-select" name="start_date" required hidden disabled></select><p class="hint" id="q-date-hint">Sunday arrival/departure if accommodation is required. Courses start on Mondays (except bank holidays).</p><p class="date-err" id="q-date-err" hidden></p><p class="date-note" id="q-date-note" hidden></p></div>
         </div>
         <div class="q-grid2">
           <div><label for="q-weeks">Duration (weeks) *</label><select id="q-weeks" name="duration_weeks" required><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option><option>11</option><option>12</option><option>13</option><option>14</option><option>15</option><option>16</option><option>17</option><option>18</option><option>19</option><option>20</option><option>21</option><option>22</option><option>23</option><option>24</option><option>25</option><option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option><option>32</option><option>33</option><option>34</option><option>35</option><option>36</option><option>37</option><option>38</option><option>39</option><option>40</option><option>41</option><option>42</option><option>43</option><option>44</option><option>45</option><option>46</option><option>47</option><option>48</option><option>49</option><option>50</option><option>51</option><option>52</option></select></div>
@@ -1406,6 +1412,145 @@ document.querySelectorAll(".search-open").forEach(function(b){
     })});
 
   panel.querySelectorAll("a").forEach(function(a){a.addEventListener("click",close)})})();
+</script>
+
+<script>
+/* ===== Course-aware start dates (2027) ===== */
+(function(){
+  var courseSel = document.getElementById("q-course");
+  var dateIn    = document.getElementById("q-date");
+  var dateSel   = document.getElementById("q-date-select");
+  var hint      = document.getElementById("q-date-hint");
+  var err       = document.getElementById("q-date-err");
+  var note      = document.getElementById("q-date-note");
+  if(!courseSel || !dateIn || !dateSel) return;
+
+  var HOLS = ["2027-01-01","2027-03-26","2027-03-29","2027-05-03","2027-05-31",
+              "2027-08-30","2027-12-25","2027-12-27","2027-12-28"];
+
+  var RULES = {
+    general: {mode:"list", min:"2027-01-04", max:"2027-12-13",
+      dates:["2027-01-04","2027-01-11","2027-01-18","2027-01-25","2027-02-01","2027-02-08","2027-02-15","2027-02-22","2027-03-01","2027-03-08","2027-03-15","2027-03-22","2027-03-30","2027-04-05","2027-04-12","2027-04-19","2027-04-26","2027-05-04","2027-05-10","2027-05-17","2027-05-24","2027-06-01","2027-06-07","2027-06-14","2027-06-21","2027-06-28","2027-07-05","2027-07-12","2027-07-19","2027-07-26","2027-08-02","2027-08-09","2027-08-16","2027-08-23","2027-08-31","2027-09-06","2027-09-13","2027-09-20","2027-09-27","2027-10-04","2027-10-11","2027-10-18","2027-10-25","2027-11-01","2027-11-08","2027-11-15","2027-11-22","2027-11-29","2027-12-06","2027-12-13"],
+      hint:"Any Monday from 4 January to 13 December 2027. When the Monday is a bank holiday the course starts on the Tuesday instead. The school is closed over Christmas and New Year. Sunday arrival/departure if accommodation is required."},
+    oneToOne: {mode:"weekday", min:"2027-01-04", max:"2027-12-17",
+      windows:[["2027-01-04","2027-12-17"]],
+      hint:"Any weekday from 4 January to 17 December 2027, excluding bank holidays. One-to-one lessons are arranged around your schedule."},
+    cambridge: {mode:"fixed",
+      dates:["2027-02-15","2027-05-24","2027-07-05","2027-08-02","2027-11-15"],
+      hint:"Cambridge exam courses run on fixed start dates only. Choose one of the dates listed."},
+    exec: {mode:"fixed",
+      dates:["2027-01-04","2027-02-01","2027-03-01","2027-04-05","2027-05-04","2027-06-07",
+             "2027-07-05","2027-08-02","2027-09-06","2027-10-04","2027-11-01","2027-12-06"],
+      hint:"This course starts on the first Monday of each month. In May it starts on Tuesday 4 May, because the first Monday is a bank holiday."}
+  };
+
+  var DAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var MONTHS = ["January","February","March","April","May","June",
+                "July","August","September","October","November","December"];
+
+  function toDate(iso){ return new Date(iso + "T00:00:00"); }
+  function pretty(iso){
+    var d = toDate(iso);
+    return DAYS[d.getDay()] + " " + d.getDate() + " " + MONTHS[d.getMonth()] + " " + d.getFullYear();
+  }
+  function currentRule(){
+    var opt = courseSel.options[courseSel.selectedIndex];
+    return RULES[opt && opt.getAttribute("data-rule")] || RULES.monday;
+  }
+  function inWindows(iso, windows){
+    for(var i=0;i<windows.length;i++){
+      if(iso >= windows[i][0] && iso <= windows[i][1]) return true;
+    }
+    return false;
+  }
+  function showErr(msg){
+    if(msg){ err.textContent = msg; err.hidden = false; }
+    else { err.textContent = ""; err.hidden = true; }
+    dateIn.setCustomValidity(msg || "");
+  }
+  function showNote(msg){
+    if(msg){ note.textContent = msg; note.hidden = false; }
+    else { note.textContent = ""; note.hidden = true; }
+  }
+
+  function tuesdayNotice(iso){
+    return "This course week starts on Tuesday " + toDate(iso).getDate() + " " +
+           MONTHS[toDate(iso).getMonth()] + ", because the Monday is a UK bank holiday and the school is closed. " +
+           "Please note there is no discount or refund for the missed lesson.";
+  }
+
+  function validateDate(){
+    var rule = currentRule();
+    if(rule.mode === "fixed"){ showErr(""); return; }
+    var v = dateIn.value;
+    if(!v){ showErr(""); showNote(""); return; }
+
+    if(rule.mode === "list"){
+      if(rule.dates.indexOf(v) === -1){
+        showNote("");
+        if(HOLS.indexOf(v) !== -1){
+          showErr(pretty(v) + " is a UK bank holiday. That week starts on the Tuesday instead — please select the Tuesday.");
+        } else if(v < rule.min || v > rule.max){
+          showErr(pretty(v) + " is outside the dates available. " + rule.hint);
+        } else {
+          showErr("Courses start on a Monday. " + pretty(v) + " is a " + DAYS[toDate(v).getDay()] + " — please choose a Monday.");
+        }
+        return;
+      }
+      showErr("");
+      showNote(toDate(v).getDay() === 2 ? tuesdayNotice(v) : "");
+      return;
+    }
+
+    showNote("");
+    if(HOLS.indexOf(v) !== -1){
+      showErr(pretty(v) + " is a UK bank holiday, so courses cannot start on this date. Please choose another date.");
+      return;
+    }
+    if(!inWindows(v, rule.windows)){
+      showErr(pretty(v) + " is outside the dates available for this course. " + rule.hint);
+      return;
+    }
+    var day = toDate(v).getDay();
+    if(rule.mode === "weekday" && (day === 0 || day === 6)){
+      showErr("Please choose a weekday. " + pretty(v) + " is a " + DAYS[day] + ".");
+      return;
+    }
+    showErr("");
+  }
+
+  function applyRule(){
+    var rule = currentRule();
+    hint.textContent = rule.hint;
+
+    if(rule.mode === "fixed"){
+      var keep = dateSel.value;
+      dateSel.innerHTML = '<option value="">Choose a start date…</option>' +
+        rule.dates.map(function(d){
+          return '<option value="' + d + '">' + pretty(d) + '</option>';
+        }).join("");
+      if(rule.dates.indexOf(keep) !== -1) dateSel.value = keep;
+      dateSel.hidden = false; dateSel.disabled = false;
+      dateIn.hidden = true;  dateIn.disabled = true;
+      dateIn.removeAttribute("required");
+      dateSel.setAttribute("required","required");
+      showErr(""); showNote("");
+    } else {
+      dateSel.hidden = true;  dateSel.disabled = true;
+      dateSel.removeAttribute("required");
+      dateIn.hidden = false;  dateIn.disabled = false;
+      dateIn.setAttribute("required","required");
+      dateIn.min = rule.min;
+      dateIn.max = rule.max;
+      validateDate();
+    }
+  }
+
+  courseSel.addEventListener("change", applyRule);
+  dateIn.addEventListener("change", validateDate);
+  dateIn.addEventListener("blur", validateDate);
+  applyRule();
+})();
 </script>
 
 </body>
