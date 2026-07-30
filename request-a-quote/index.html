@@ -682,6 +682,19 @@ body.theme-junior .dots button[aria-current="true"]{background:var(--leaf)}
   .choice-grid{grid-template-columns:1fr !important}
 }
 
+/* ====== QUOTE FORM WIDTH & CHOICE SPACING ====== */
+@media(min-width:920px){.q-form{max-width:1080px}}
+.choice{display:flex;align-items:flex-start;gap:0}
+.choice input[type=checkbox],.choice input[type=radio]{
+  width:20px;height:20px;min-width:20px;min-height:20px;
+  flex:none;cursor:pointer;accent-color:#29ABE2;
+  margin:1px 14px 0 0}
+.choice span{flex:1;min-width:0;line-height:1.45}
+.choice small{margin-top:3px;line-height:1.45}
+@media(max-width:680px){
+  .choice input[type=checkbox],.choice input[type=radio]{margin-right:12px}
+}
+
 /* ====== ACCESSIBILITY FIXES ====== */
 .dots button{width:24px;height:24px;border-radius:50%;padding:0;position:relative}
 .dots button::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.35)}
@@ -987,11 +1000,14 @@ body.theme-junior .lead .lede{color:rgba(255,255,255,.82)}
       <fieldset>
         <legend>3 · Extras &amp; supplements</legend>
         <div class="choice-grid">
-          <label class="choice"><input type="checkbox" name="extras" value="Summer Activity Package"><span>Summer Activity Package</span></label>
-          <label class="choice"><input type="checkbox" name="extras" value="Special diet"><span>Special diet<small>Gluten-free, lactose-free, vegan…</small></span></label>
-          <label class="choice"><input type="checkbox" name="extras" value="Private bathroom supplement"><span>Private bathroom supplement</span></label>
-          <label class="choice"><input type="checkbox" name="extras" value="Allergies - see notes"><span>Allergies<small>Please give details in the notes</small></span></label>
+          <label class="choice"><input type="checkbox" name="extras" value="Summer Activity Package"><span>Summer Activity Package<small>Afternoon activities plus a full-day Saturday excursion, during the summer season. Evening activities are not included.</small></span></label>
+          <label class="choice"><input type="checkbox" name="extras" value="Special diet"><span>Special diet<small>Gluten-free, lactose-free or vegan, catered in your homestay and in school lunches. Charged per week. Please request at booking so we can match you with a suitable host.</small></span></label>
+          <label class="choice"><input type="checkbox" name="extras" value="Private bathroom supplement"><span>Private bathroom supplement<small>A homestay room with your own private bathroom, charged per week and subject to availability.</small></span></label>
+          <label class="choice"><input type="checkbox" name="extras" value="Hot lunch meal deal"><span>Hot lunch meal deal<small>A hot main meal and a drink in the school cafeteria, Monday to Friday. Charged per week, low season only.</small></span></label>
+          <label class="choice"><input type="checkbox" name="extras" value="Room retainer"><span>Room retainer<small>Keeps your homestay room reserved while you are away travelling, so you return to the same host family.</small></span></label>
+          <label class="choice"><input type="checkbox" name="extras" value="Allergies - see notes"><span>Allergies<small>Tell us about any allergies before arrival so we can keep you safe. Please give full details in the notes below.</small></span></label>
         </div>
+        <p class="hint">Some supplements are added automatically where they apply, so you do not need to select them: a book supplement on one-week courses (courses of two weeks or more include books), a summer course supplement on General &amp; Intensive courses during the summer season, a Christmas and New Year supplement, and an under-12 surcharge for younger students. We are unable to guarantee halal meals — whether halal food can be provided is at the discretion of each individual host.</p>
       </fieldset>
 
       <fieldset>
