@@ -1831,6 +1831,18 @@ const LAST_ADULT_FRIDAY  = new Date(2027,11,17); // school closes 17:00 Fri 17 D
 const LAST_JUNIOR_FRIDAY = new Date(2027, 7,20); // last course week before season end 22 Aug
 const FIRST_MONDAY_2027  = new Date(2027, 0, 4);
 
+/* School closure: 17:00 Fri 17 Dec 2027 → 08:30 Mon 3 Jan 2028.
+   The Christmas / New Year supplement pays host families to keep students over
+   the holiday, so it follows homestay weeks (Sunday to Sunday) rather than the
+   closure dates: Sun 19–26 Dec and Sun 26 Dec–2 Jan. Maximum 2 weeks. */
+const CLOSURE = {
+  label: "19 Dec 2027 – 2 Jan 2028",
+  weeks: [
+    { s:new Date(2027,11,19), e:new Date(2027,11,26) },
+    { s:new Date(2027,11,26), e:new Date(2028,0,2)  }
+  ]
+};
+
 const FEES = {
   registration: 120,                     // all courses
   bookSupplement1wk: 50,                 // compulsory on 1-week courses
@@ -2054,6 +2066,20 @@ function maxWeeksFrom(course, start){
   return Math.min(course.maxWeeks || 52, Math.max(1, cap));
 }
 
+/* Homestay runs Sunday to Sunday, so accommodation begins the Sunday on or
+   before the course start date — a Monday 29 Nov course start means the student
+   arrives Sun 28 Nov, and a 4-week stay ends Sun 26 Dec. */
+function accStartDate(courseStart){
+  return courseStart ? addDays(courseStart, -courseStart.getDay()) : null;
+}
+
+/* Christmas / New Year weeks (Sun–Sun) covered by the accommodation stay — max 2 */
+function closureWeeks(start, weeks){
+  if (!start || !weeks) return 0;
+  const stayStart = accStartDate(start), stayEnd = addDays(stayStart, weeks*7);
+  return CLOSURE.weeks.filter(w => stayStart < w.e && stayEnd > w.s).length;
+}
+
 function summerWeeks(start, weeks){
   let n = 0;
   for (let i=0;i<weeks;i++) if (inSummer(addDays(start, i*7))) n++;
@@ -2168,16 +2194,14 @@ function calculate(){
       if (acc.flat != null){
         line(a, `${acc.name} · ${accWeeks} wk × ${gbp(acc.flat)}`, acc.flat*accWeeks);
       } else {
-        const sw = summerWeeks(state.startDate, accWeeks);
+        const sw = summerWeeks(accStartDate(state.startDate), accWeeks);
         const lw = accWeeks - sw;
         if (lw) line(a, `${acc.name} (low season) · ${lw} wk × ${gbp(acc.ls)}`, acc.ls*lw);
         if (sw && acc.ss != null) line(a, `${acc.name} (summer) · ${sw} wk × ${gbp(acc.ss)}`, acc.ss*sw);
       }
-      /* Christmas / New Year supplement — one-off if the stay covers 25 Dec */
-      const stayEnd = addDays(state.startDate, accWeeks*7);
-      const xmas = new Date(2027,11,25);
-      if (state.startDate <= xmas && stayEnd > xmas)
-        line(a, "Christmas / New Year supplement", FEES.christmasSupplement);
+      /* Christmas / New Year supplement — charged per week of the closure */
+      const xw = closureWeeks(state.startDate, accWeeks);
+      if (xw) line(a, `Christmas / New Year supplement · ${xw} wk × ${gbp(FEES.christmasSupplement)}`, FEES.christmasSupplement*xw);
       /* Special diet */
       if (state.specialDiet){
         const dw = c.group==="junior" ? DIET.junior : (acc.id==="pb" ? DIET.part : DIET.full);
@@ -2468,6 +2492,8 @@ function renderAccommodation(){
     const isHours = c.type==="hours";
     const same = isHours ? false : state.accSameAsCourse;
     const val = same ? wks : (state.accWeeks || (isHours ? 1 : wks));
+    const arrive = accStartDate(state.startDate);
+    const depart = addDays(arrive, (val||0)*7);
     els.accWeeksRow.innerHTML = `
       ${!isHours?`<div class="field" style="flex:0 1 240px"><label for="accSame">Accommodation length</label>
         <select id="accSame">
@@ -2476,7 +2502,7 @@ function renderAccommodation(){
         </select></div>`:""}
       <div class="field" style="flex:0 1 200px"><label for="accWeeks">Weeks of accommodation</label>
         <input type="number" id="accWeeks" min="1" max="52" step="1" value="${val}" ${same?"disabled":""}>
-        <div class="hint">Sunday arrival → Sunday departure.</div></div>`;
+        <div class="hint">Arrive <b>${labelDate(arrive)}</b> → depart <b>${labelDate(depart)}</b>.</div></div>`;
     const sameSel = $("#accSame"), awIn = $("#accWeeks");
     if (sameSel) sameSel.addEventListener("change", e=>{ state.accSameAsCourse = e.target.value==="1"; if(!state.accSameAsCourse) state.accWeeks = wks; update(); });
     if (awIn) awIn.addEventListener("input", e=>{ state.accWeeks = e.target.value?Math.max(1,Math.floor(+e.target.value)):null; update(); });
@@ -2493,8 +2519,11 @@ function renderAccommodation(){
       msgs += msgHTML("info", `Because the student is ${age} and staying 27+ nights, UK law requires <b>private foster family homestay</b>. We've automatically applied the foster family rate of £330/week (full board).`);
     if (acc.minWeeks && accWeeks && accWeeks < acc.minWeeks)
       msgs += msgHTML("warn", `Self-catered residential is available for <b>${acc.minWeeks}+ week stays only</b>. Please increase the stay or choose homestay.`);
-    if (acc.lsOnly && accWeeks && summerWeeks(state.startDate, accWeeks)>0)
+    if (acc.lsOnly && accWeeks && summerWeeks(accStartDate(state.startDate), accWeeks)>0)
       msgs += msgHTML("warn", `Full board homestay for adults is a <b>low season</b> option — in the summer season (27 Jun – 22 Aug) please choose part board homestay instead.`);
+    const xwks = closureWeeks(state.startDate, accWeeks);
+    if (xwks)
+      msgs += msgHTML("info", `A <b>Christmas / New Year supplement of £85 per week</b> applies to homestay weeks over the holiday (Sunday to Sunday, ${CLOSURE.label} — maximum 2 weeks). This stay covers ${xwks} of them, added automatically.`);
 
     if (acc.id !== "res"){
       const dietPrice = c.group==="junior" ? DIET.junior : (acc.id==="pb" ? DIET.part : DIET.full);
