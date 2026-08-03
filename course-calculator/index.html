@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IELTS Academic or IELTS General – Which One Is Right for You? | Southbourne School of English</title>
-<meta name="description" content="Are you thinking about taking the IELTS exam but not quite sure which version to choose – Academic or General Training? Find out more.">
-<link rel="canonical" href="https://southbourneschool.co.uk/blog/ielts-academic-or-ielts-general/">
-<meta property="og:title" content="IELTS Academic or IELTS General – Which One Is Right for You?">
-<meta property="og:description" content="Are you thinking about taking the IELTS exam but not quite sure which version to choose – Academic or General Training?">
-<meta property="og:url" content="https://southbourneschool.co.uk/blog/ielts-academic-or-ielts-general/">
+<title>Course Calculator 2027 | Southbourne School of English</title>
+<meta name="description" content="Build your own 2027 English course and see an instant quotation — tuition, accommodation, supplements, extras and airport transfers.">
+<link rel="canonical" href="https://southbourneschool.co.uk/course-calculator/">
+<meta property="og:title" content="Course Calculator 2027">
+<meta property="og:description" content="Build your course and see your price instantly.">
+<meta property="og:url" content="https://southbourneschool.co.uk/course-calculator/">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
 <meta name="robots" content="index, follow">
@@ -17,7 +17,7 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Albert+Sans:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Albert+Sans:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Albert+Sans:wght@400;500;600;700&display=swap"></noscript>
-
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Course", "name": "General & Intensive English", "description": "Learn General or Intensive English in Bournemouth at a British Council-accredited school. 15 or 21 hours/week, start any Monday, all levels A1\u2013C2, age 15+. Free quote.", "provider": {"@type": "LanguageSchool", "name": "Southbourne School of English", "address": {"@type": "PostalAddress", "streetAddress": "30 Beaufort Road", "addressLocality": "Bournemouth", "addressRegion": "Dorset", "postalCode": "BH6 5AL", "addressCountry": "GB"}, "telephone": "+441202422300", "url": "https://southbourneschool.co.uk/"}, "url": "https://southbourneschool.co.uk/english-courses/adult-language-courses/general-intensive/"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How many students are in a class?", "acceptedAnswer": {"@type": "Answer", "text": "Classes are small and friendly, so your teacher knows your name and your goals from day one. Exact maximums depend on the season \u2014 ask us for current details."}}, {"@type": "Question", "name": "Can I start at any level?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We teach all levels from beginner (A1) to advanced (C2), and your placement test ensures you join exactly the right class."}}, {"@type": "Question", "name": "What's the difference between General and Intensive?", "acceptedAnswer": {"@type": "Answer", "text": "General English is 15 hours per week of morning lessons. Intensive adds afternoon classes for 21 hours per week \u2014 ideal if you want faster progress."}}, {"@type": "Question", "name": "Do you help with visas?", "acceptedAnswer": {"@type": "Answer", "text": "Yes \u2014 once you book, we provide the documentation you need for a Standard Visitor or Short-term Study visa application and guide you through the process."}}]}]</script>
 <style>
 /* ====== TOKENS ====== */
 :root{
@@ -705,15 +705,411 @@ body.theme-junior .lead h2{color:#fff}
 body.theme-junior .lead .eyebrow{color:#A0E88A}
 body.theme-junior .lead h2{color:#fff}
 body.theme-junior .lead .lede{color:rgba(255,255,255,.82)}
-.yt-lite{border-radius:inherit}.yt-playing{padding:0}.yt-playing iframe{border-radius:inherit}
 .gr-blog{display:inline-block;font-size:9.5px;font-weight:700;letter-spacing:.02em;color:#fff;background:var(--leaf);padding:2px 7px;border-radius:99px;margin-right:7px;font-style:normal;vertical-align:middle}
 </style>
 <link rel="preconnect" href="https://southbourneschool.co.uk" crossorigin>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://www.google.com">
 <link rel="dns-prefetch" href="https://i.ytimg.com">
+<link rel="preload" as="image" href="/southbourneschoolofenglish/img/photos/school/students-parasol.webp" fetchpriority="high">
+<style>
+/* ============================================================
+   SOUTHBOURNE SCHOOL OF ENGLISH · COURSE CALCULATOR 2027
+   Brand palette & typography lifted from the 2027 price list
+   ============================================================ */
+#calcApp{
+  --ink:#1B3A6B;            /* brand navy */
+  --ink-deep:#0E2A52;
+  --ink-soft:#3D5A85;
+  --sky:#29ABE2;
+  --sky-deep:#1687B8;
+  --sun:#FFD400;
+  --sun-deep:#E9BC00;
+  --leaf:#7AC36A;
+  --leaf-deep:#4E9440;
+  --foam:#EAF5FB;
+  --paper:#F5F9FC;
+  --card:#FFFFFF;
+  --line:rgba(27,58,107,.14);
+  --line-soft:rgba(27,58,107,.08);
+  --danger:#C0392B;
+  --danger-bg:#FDF0EE;
+  --shadow:0 14px 40px -14px rgba(14,42,82,.25);
+  --shadow-sm:0 6px 18px -8px rgba(14,42,82,.18);
+  --display:"Bricolage Grotesque",Georgia,serif;
+  --body:"Albert Sans",-apple-system,"Segoe UI",sans-serif;
+  --radius:18px;
+}
+#calcApp *{box-sizing:border-box}
+#calcApp{scroll-behavior:smooth}
+#calcApp{
+  margin:0;
+  font-family:var(--body);
+  color:var(--ink-deep);
+  background:
+    radial-gradient(1100px 500px at 85% -100px, rgba(41,171,226,.16), transparent 60%),
+    radial-gradient(900px 420px at -100px 30%, rgba(255,212,0,.10), transparent 60%),
+    var(--paper);
+  -webkit-font-smoothing:antialiased;
+  line-height:1.5;
+}
+#calcApp a{color:var(--sky-deep)}
+/* ---------------- Hero ---------------- */
+#calcApp .hero{
+  background:linear-gradient(118deg,var(--ink-deep) 0%,var(--ink) 55%,#1D4E8F 100%);
+  color:#fff;
+  padding:44px 20px 116px;
+  position:relative;
+  overflow:hidden;
+}
+#calcApp .hero::after{
+  content:"";position:absolute;inset:auto -10% -55% -10%;height:70%;
+  background:radial-gradient(closest-side, rgba(41,171,226,.35), transparent 70%);
+  pointer-events:none;
+}
+#calcApp .hero-inner{max-width:1160px;margin:0 auto;position:relative;z-index:1}
+#calcApp .eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;font-weight:700;letter-spacing:.14em;
+  color:var(--sun);margin:0 0 10px;
+}
+#calcApp .eyebrow::before{content:"";width:26px;height:3px;background:var(--sun);border-radius:2px}
+#calcApp .hero h1{
+  font-family:var(--display);font-weight:800;
+  font-size:clamp(30px,4.6vw,52px);line-height:1.04;margin:0 0 12px;letter-spacing:-.01em;
+}
+#calcApp .hero h1 em{font-style:normal;color:var(--sky)}
+#calcApp .hero p.lede{max-width:640px;margin:0;font-size:16px;color:rgba(255,255,255,.85)}
+#calcApp .hero .est{
+  display:inline-block;margin-top:16px;font-size:12px;font-weight:600;
+  color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.25);
+  padding:5px 12px;border-radius:999px;
+}
+#calcApp .hero-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+#calcApp .hero-text{min-width:0}
+#calcApp .hero-logo{
+  flex:none;width:150px;height:auto;
+  background:#fff;padding:14px 16px;border-radius:16px;
+  box-shadow:0 14px 34px -12px rgba(0,0,0,.45);
+}
+@media (max-width:720px){
+#calcApp .hero-logo{width:112px;padding:10px 12px;align-self:flex-start}
+}
+@media (max-width:480px){
+#calcApp .hero-inner{flex-direction:column-reverse;align-items:flex-start;gap:18px}
+}
+/* ---------------- Layout ---------------- */
+#calcApp .wrap{max-width:1160px;margin:-72px auto 60px;padding:0 20px;position:relative;z-index:2}
+/* NOTE: grid items stretch by default so the aside is full-height —
+   this is what allows the quote panel to stay sticky all the way down. */
+#calcApp .grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:26px}
+@media (max-width:960px){
+#calcApp .grid{grid-template-columns:1fr}
+}
+/* ---------------- Progress ---------------- */
+#calcApp .progress{
+  background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:14px 18px;margin-bottom:26px;display:flex;gap:6px;flex-wrap:wrap;
+}
+#calcApp .pstep{
+  flex:1 1 130px;display:flex;align-items:center;gap:10px;
+  padding:8px 10px;border-radius:12px;font-size:13px;font-weight:600;color:var(--ink-soft);
+  transition:background .25s,color .25s;
+}
+#calcApp .pstep .dot{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  display:grid;place-items:center;font-size:12.5px;font-weight:700;
+  background:var(--foam);color:var(--ink);border:2px solid var(--line);
+  transition:all .25s;
+}
+#calcApp .pstep.done .dot{background:var(--leaf);border-color:var(--leaf);color:#fff}
+#calcApp .pstep.done{color:var(--ink)}
+#calcApp .pstep.active{background:var(--foam);color:var(--ink-deep)}
+#calcApp .pstep.active .dot{background:var(--ink);border-color:var(--ink);color:var(--sun)}
+/* ---------------- Cards / sections ---------------- */
+#calcApp .card{
+  background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow-sm);
+  padding:26px 26px 24px;margin-bottom:24px;border:1px solid var(--line-soft);
+}
+#calcApp .card h2{
+  font-family:var(--display);font-weight:700;font-size:22px;margin:0 0 4px;color:var(--ink-deep);
+  display:flex;align-items:center;gap:12px;
+}
+#calcApp .stepnum{
+  width:32px;height:32px;border-radius:10px;flex:none;
+  background:linear-gradient(140deg,var(--ink),#1D4E8F);color:var(--sun);
+  display:grid;place-items:center;font-size:15px;font-family:var(--body);font-weight:700;
+}
+#calcApp .card .sub{margin:0 0 18px 44px;color:var(--ink-soft);font-size:14px}
+#calcApp .card.disabled{opacity:.45;pointer-events:none;filter:saturate(.4)}
+/* ---------------- Form controls ---------------- */
+#calcApp .frow{display:flex;gap:16px;flex-wrap:wrap;margin-left:44px}
+@media (max-width:640px){
+#calcApp .frow{margin-left:0}
+#calcApp .card .sub{margin-left:0}
+}
+#calcApp .field{flex:1 1 220px;min-width:180px}
+#calcApp .field label{display:block;font-size:12.5px;font-weight:700;letter-spacing:.05em;color:var(--ink-soft);margin-bottom:6px}
+#calcApp .field input[type=text], #calcApp .field input[type=number], #calcApp .field select{
+  width:100%;padding:12px 14px;border-radius:12px;border:1.5px solid var(--line);
+  font:inherit;font-size:15px;color:var(--ink-deep);background:#fff;outline:none;
+  transition:border-color .2s, box-shadow .2s;
+}
+#calcApp .field input:focus, #calcApp .field select:focus{border-color:var(--sky);box-shadow:0 0 0 4px rgba(41,171,226,.15)}
+#calcApp .field input.invalid{border-color:var(--danger);box-shadow:0 0 0 4px rgba(192,57,43,.12)}
+#calcApp .hint{font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+#calcApp .badges{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 0 44px}
+@media (max-width:640px){
+#calcApp .badges{margin-left:0}
+}
+#calcApp .badge{
+  display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:600;
+  background:var(--foam);color:var(--ink);border:1px solid var(--line);
+  padding:7px 13px;border-radius:999px;
+}
+#calcApp .badge b{font-weight:800}
+#calcApp .badge.ss{background:#FFF7D6;border-color:rgba(233,188,0,.5)}
+/* Option cards (radio) */
+#calcApp .optgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-left:44px}
+@media (max-width:640px){
+#calcApp .optgrid{margin-left:0}
+}
+#calcApp .opt{
+  position:relative;border:1.5px solid var(--line);border-radius:14px;background:#fff;
+  padding:14px 16px;cursor:pointer;transition:border-color .18s, box-shadow .18s, transform .18s;
+  display:flex;flex-direction:column;gap:3px;
+}
+#calcApp .opt:hover{border-color:var(--sky);transform:translateY(-1px)}
+#calcApp .opt input{position:absolute;opacity:0;pointer-events:none}
+#calcApp .opt.selected{border-color:var(--ink);box-shadow:0 0 0 3px rgba(27,58,107,.14);background:linear-gradient(180deg,#fff, var(--foam))}
+#calcApp .opt .oname{font-weight:700;font-size:15px;color:var(--ink-deep);padding-right:26px}
+#calcApp .opt .ometa{font-size:12.5px;color:var(--ink-soft)}
+#calcApp .opt .oprice{font-family:var(--display);font-weight:700;font-size:16px;color:var(--sky-deep);margin-top:4px}
+#calcApp .opt .tick{
+  position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;
+  border:2px solid var(--line);display:grid;place-items:center;font-size:11px;color:#fff;
+  transition:all .18s;
+}
+#calcApp .opt.selected .tick{background:var(--leaf);border-color:var(--leaf)}
+#calcApp .opt.selected .tick::after{content:"✓"}
+#calcApp .opt .flag{
+  align-self:flex-start;font-size:10.5px;font-weight:800;letter-spacing:.08em;
+  background:var(--sun);color:var(--ink-deep);padding:2px 8px;border-radius:6px;margin-bottom:4px;
+}
+#calcApp .opt .flag.blue{background:var(--foam);color:var(--ink)}
+/* Checkbox rows */
+#calcApp .checklist{margin-left:44px;display:flex;flex-direction:column;gap:10px}
+@media (max-width:640px){
+#calcApp .checklist{margin-left:0}
+}
+#calcApp .chk{
+  display:flex;align-items:flex-start;gap:12px;border:1.5px solid var(--line);border-radius:12px;
+  padding:12px 14px;cursor:pointer;background:#fff;transition:border-color .18s;
+}
+#calcApp .chk:hover{border-color:var(--sky)}
+#calcApp .chk.checked{border-color:var(--leaf);background:linear-gradient(180deg,#fff,#F2FAF0)}
+#calcApp .chk input{width:18px;height:18px;margin-top:2px;accent-color:var(--leaf-deep);flex:none}
+#calcApp .chk .ctext{flex:1}
+#calcApp .chk .cname{font-weight:600;font-size:14.5px;color:var(--ink-deep)}
+#calcApp .chk .cmeta{font-size:12.5px;color:var(--ink-soft)}
+#calcApp .chk .cprice{font-weight:700;font-size:14px;color:var(--sky-deep);white-space:nowrap;margin-left:auto;padding-left:10px}
+#calcApp .chk.locked{cursor:default;border-color:rgba(27,58,107,.22);background:var(--foam)}
+#calcApp .chk.locked .lock{
+  font-size:10.5px;font-weight:800;letter-spacing:.07em;
+  background:var(--ink);color:var(--sun);padding:2px 8px;border-radius:6px;
+}
+/* Validation & notes */
+#calcApp .msg{
+  margin:14px 0 0 44px;border-radius:12px;padding:12px 15px;font-size:13.5px;line-height:1.45;
+  display:flex;gap:10px;align-items:flex-start;
+}
+@media (max-width:640px){
+#calcApp .msg{margin-left:0}
+}
+#calcApp .msg .ic{flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-weight:800;font-size:12px;color:#fff}
+#calcApp .msg.warn{background:var(--danger-bg);color:#7C2A20;border:1px solid rgba(192,57,43,.25)}
+#calcApp .msg.warn .ic{background:var(--danger)}
+#calcApp .msg.info{background:var(--foam);color:var(--ink);border:1px solid var(--line)}
+#calcApp .msg.info .ic{background:var(--sky)}
+#calcApp .msg.ok{background:#F2FAF0;color:#2E5B26;border:1px solid rgba(122,195,106,.5)}
+#calcApp .msg.ok .ic{background:var(--leaf-deep)}
+/* ---------------- Quote panel ---------------- */
+#calcApp aside{min-width:0}
+#calcApp .quote{
+  position:sticky;top:20px;
+  background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);
+  overflow:hidden;border:1px solid var(--line-soft);
+}
+#calcApp .quote .qhead{
+  background:linear-gradient(118deg,var(--ink-deep),var(--ink) 70%);color:#fff;
+  padding:20px 22px 18px;
+}
+#calcApp .quote .qhead .k{font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--sun);margin:0 0 4px}
+#calcApp .quote .qhead h3{font-family:var(--display);font-weight:700;font-size:22px;margin:0}
+#calcApp .qbody{padding:18px 22px 8px;max-height:44vh;overflow:auto}
+#calcApp .qgroup{margin-bottom:14px}
+#calcApp .qgroup .gname{
+  font-size:11px;font-weight:800;letter-spacing:.1em;
+  color:var(--ink-soft);margin-bottom:6px;border-bottom:1px solid var(--line-soft);padding-bottom:4px;
+}
+#calcApp .qline{display:flex;justify-content:space-between;gap:12px;font-size:13.5px;padding:3.5px 0;color:var(--ink-deep)}
+#calcApp .qline .ql{color:var(--ink-soft)}
+#calcApp .qline .qv{font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+#calcApp .qempty{color:var(--ink-soft);font-size:13.5px;padding:8px 0 16px}
+#calcApp .qtotal{
+  background:linear-gradient(120deg,var(--sun),#FFE45C);
+  padding:18px 22px;display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+}
+#calcApp .qtotal .tl{font-size:13px;font-weight:800;letter-spacing:.08em;color:var(--ink-deep)}
+#calcApp .qtotal .tv{font-family:var(--display);font-weight:800;font-size:30px;color:var(--ink-deep);font-variant-numeric:tabular-nums;transition:transform .2s}
+#calcApp .qtotal .tv.bump{transform:scale(1.06)}
+#calcApp .qactions{display:flex;gap:10px;padding:14px 22px 4px;flex-wrap:wrap}
+#calcApp .qbtn{
+  flex:1 1 140px;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 14px;border-radius:12px;border:1.5px solid var(--ink);cursor:pointer;
+  font:inherit;font-size:13.5px;font-weight:700;text-decoration:none;text-align:center;
+  transition:transform .15s, box-shadow .15s;
+}
+#calcApp .qbtn:hover{transform:translateY(-1px);box-shadow:var(--shadow-sm)}
+#calcApp .qbtn.primary{background:var(--ink);color:#fff}
+#calcApp .qbtn.ghost{background:#fff;color:var(--ink)}
+#calcApp .qbtn[disabled]{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+#calcApp .qbtn.reset{
+  flex:1 1 100%;background:transparent;border-color:var(--line);color:var(--ink-soft);
+}
+#calcApp .qbtn.reset:hover{border-color:var(--danger);color:var(--danger);box-shadow:none}
+#calcApp .qfoot{padding:12px 22px 16px;font-size:11.5px;color:var(--ink-soft);background:transparent}
+/* Mobile sticky total bar */
+#calcApp .mbar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;
+  background:var(--ink-deep);color:#fff;padding:12px 18px;
+  justify-content:space-between;align-items:center;gap:14px;
+  box-shadow:0 -8px 24px rgba(14,42,82,.35);
+}
+#calcApp .mbar .ml{font-size:12px;letter-spacing:.08em;font-weight:700;color:var(--sun)}
+#calcApp .mbar .mv{font-family:var(--display);font-weight:800;font-size:22px}
+#calcApp .mbar a{
+  background:var(--sun);color:var(--ink-deep);text-decoration:none;font-weight:700;font-size:13px;
+  padding:9px 15px;border-radius:999px;
+}
+@media (max-width:960px){
+#calcApp .mbar{display:flex}
+#calcApp{padding-bottom:74px}
+#calcApp .quote{position:static;max-height:none}
+#calcApp .qbody{max-height:none}
+}
+/* Accreditation band */
+#calcApp .accband{max-width:1160px;margin:0 auto 26px;padding:0 20px}
+#calcApp .accband-inner{
+  background:linear-gradient(118deg,var(--ink-deep),var(--ink) 70%);
+  border-radius:var(--radius);box-shadow:var(--shadow);
+  padding:26px 30px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;
+}
+#calcApp .accband-eyebrow{
+  margin:0 0 6px;font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--sun);
+}
+#calcApp .accband h2{
+  font-family:var(--display);font-weight:700;font-size:clamp(16px,2.2vw,20px);
+  color:#fff;margin:0;max-width:24em;line-height:1.2;
+}
+#calcApp .acclogos{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+#calcApp .acclogos img{height:46px;width:auto}
+@media (max-width:640px){
+#calcApp .acclogos img{height:36px}
+#calcApp .accband-inner{padding:22px}
+}
+/* Footer */
+#calcApp .pagefoot{max-width:1160px;margin:0 auto 40px;padding:0 20px;font-size:12.5px;color:var(--ink-soft);text-align:center}
+#calcApp .pagefoot b{color:var(--ink-deep)}
+/* ---------------- Printable quotation ---------------- */
+#printSheet{display:none}
+@media print{
+#calcApp{background:#fff;padding-bottom:0}
+#calcApp .hero, #calcApp .wrap, #calcApp .mbar, #calcApp .pagefoot, #calcApp .accband{display:none!important}
+#printSheet{display:block}
+}
+#printSheet{font-family:var(--body);color:var(--ink-deep);padding:10mm 4mm}
+#printSheet .phead{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:16px;
+  border-bottom:3px solid var(--ink);padding-bottom:14px;margin-bottom:18px;
+}
+#printSheet .phead h1{font-family:var(--display);font-weight:800;font-size:26px;margin:0;color:var(--ink-deep)}
+#printSheet .phead .school{font-size:12.5px;color:var(--ink-soft);text-align:right;line-height:1.5}
+#printSheet .phead .school b{color:var(--ink-deep);font-size:14px}
+#printSheet .pmeta{display:flex;gap:24px;flex-wrap:wrap;font-size:13px;margin-bottom:16px;color:var(--ink-soft)}
+#printSheet .pmeta b{color:var(--ink-deep)}
+#printSheet table{width:100%;border-collapse:collapse;font-size:13px}
+#printSheet th{
+  text-align:left;font-size:10.5px;letter-spacing:.1em;color:#fff;
+  background:var(--ink);padding:7px 10px;
+}
+#printSheet th:last-child{text-align:right}
+#printSheet td{padding:6px 10px;border-bottom:1px solid var(--line)}
+#printSheet td.num{text-align:right;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+#printSheet tr.grp td{background:var(--foam);font-weight:800;font-size:11px;letter-spacing:.08em;color:var(--ink)}
+#printSheet .ptotal{
+  display:flex;justify-content:flex-end;gap:24px;align-items:baseline;
+  margin-top:14px;padding:12px 10px;background:#FFF3B8;border:2px solid var(--sun-deep);border-radius:8px;
+}
+#printSheet .ptotal .tl{font-size:12px;font-weight:800;letter-spacing:.1em;}
+#printSheet .ptotal .tv{font-family:var(--display);font-weight:800;font-size:24px}
+#printSheet .pnotes{font-size:11px;color:var(--ink-soft);margin-top:16px;line-height:1.55}
+#printSheet .phead .pright{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+#printSheet .plogo{height:74px;width:auto}
+#printSheet .paccreds{
+  margin-top:18px;background:linear-gradient(118deg,var(--ink-deep),var(--ink) 70%);
+  border-radius:10px;padding:12px 18px;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;
+}
+#printSheet .paccreds .ptxt{color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.1em;}
+#printSheet .paccreds .ptxt b{color:var(--sun)}
+#printSheet .paccreds .plogos{display:flex;gap:16px;align-items:center}
+#printSheet .paccreds img{height:26px;width:auto}
+@media print{
+#printSheet, #printSheet *{ -webkit-print-color-adjust:exact; print-color-adjust:exact }
+}
+#calcApp ::selection{background:var(--sun);color:var(--ink-deep)}
+#calcApp{display:block;background:radial-gradient(1100px 500px at 85% -100px, rgba(41,171,226,.12), transparent 60%),#F5F9FC;padding:1px 0}
+#calcApp .wrap{margin:24px auto 48px;padding:0 20px;max-width:1160px;position:relative;z-index:2}
+@media print{ body > *{display:none !important} #printSheet{display:block !important} body{background:#fff !important} }
+/* ── Site-CSS conflict overrides ── */
+#calcApp .quote{padding:0;display:block}
+#calcApp .qhead h3{color:#fff}
+#calcApp .qhead .k{color:var(--sun)}
+#calcApp .opt .tick{background:transparent;color:transparent;font-size:11px}
+#calcApp .opt.selected .tick{background:var(--leaf);border-color:var(--leaf);color:#fff}
+#calcApp .checklist .tick,#calcApp .check .tick{background:transparent;color:transparent}
+#calcApp .check.on .tick,#calcApp .checklist .on .tick{background:var(--leaf);border-color:var(--leaf);color:#fff}
+/* ── Printable sheet: variables + isolation from site styles ── */
+#printSheet{
+  --ink:#1B3A6B;            /* brand navy */
+  --ink-deep:#0E2A52;
+  --ink-soft:#3D5A85;
+  --sky:#29ABE2;
+  --sky-deep:#1687B8;
+  --sun:#FFD400;
+  --sun-deep:#E9BC00;
+  --leaf:#7AC36A;
+  --leaf-deep:#4E9440;
+  --foam:#EAF5FB;
+  --paper:#F5F9FC;
+  --card:#FFFFFF;
+  --line:rgba(27,58,107,.14);
+  --line-soft:rgba(27,58,107,.08);
+  --danger:#C0392B;
+  --danger-bg:#FDF0EE;
+  --shadow:0 14px 40px -14px rgba(14,42,82,.25);
+  --shadow-sm:0 6px 18px -8px rgba(14,42,82,.18);
+  --display:"Bricolage Grotesque",Georgia,serif;
+  --body:"Albert Sans",-apple-system,"Segoe UI",sans-serif;
+  --radius:18px;
+}
+#printSheet h1,#printSheet h2,#printSheet h3{font-family:var(--display)}
+
+</style>
 </head>
 <body class="has-sticky">
+
 
 <header>
   <div class="wrap nav">
@@ -932,95 +1328,164 @@ body.theme-junior .lead .lede{color:rgba(255,255,255,.82)}
 
 <main>
 
-
-
-<article class="blog-post" style="padding:48px 0 0">
-  <div class="wrap" style="max-width:780px">
-<p style="font-size:13px;color:var(--ink-soft);margin-bottom:8px"><a href="/southbourneschoolofenglish/blog/" style="color:var(--sky);text-decoration:none;font-weight:600">← Back to blog</a> · 16 April 2025 · <b>Joshua</b> · 4 min read</p>
-<h1 style="font-size:clamp(28px,4vw,40px);line-height:1.2;margin-bottom:24px">IELTS Academic or IELTS General – Which One Is Right for You?</h1>
-<img src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/iStock-690315308-990x500.jpg" alt="English test">
-<p class="lede" style="font-size:18px;color:var(--ink-soft);margin-bottom:32px">Are you thinking about taking the <b>IELTS</b> exam but are not quite sure which version to choose – Academic or General Training? The choice can be confusing!</p>
-<p>At <b>Southbourne School of English</b>, we’ve helped thousands of international students improve their English and build confidence. Many go on to success in the IELTS examination, although we don’t offer a specific IELTS preparation course. Our <a href="/southbourneschoolofenglish/english-courses/adult-language-courses/general-intensive/">General and Intensive English courses</a> are designed to give you the skills you need to succeed.</p>
-<p>In this post, we will look at the difference between the types of IELTS exam, and advise you how our school can help you!</p>
-
-<h2>What’s the Difference Between IELTS Academic and IELTS General?</h2>
-<p>Both exams test your level in four key skills: <b>Listening, Reading, Writing, and Speaking,</b> but the purpose of the two exams is slightly different.</p>
-<p><a href="https://ielts.org/take-a-test/test-types/ielts-academic-test"><b><i>IELTS Academic</i></b></a></p>
-<p>This version is for students who want to:</p>
-<ul>
-  <li>Study at a <b>university or college</b> in the UK or another English-speaking country</li>
-  <li>Apply for <b>professional registration</b> in fields like medicine, nursing, law or engineering</li>
-  <li>Show academic-level English skills for a <b>Student Route visa</b></li>
-</ul>
-<p><a href="https://ielts.org/take-a-test/test-types/ielts-general-training-test"><b><i>IELTS General Training</i></b></a></p>
-<p>This test is for you if you want to:</p>
-<ul>
-  <li><b>Immigrate</b> to the UK, Canada, Australia, or New Zealand</li>
-  <li>Apply for <b>secondary education</b> or <b>training programmes</b></li>
-  <li>Demonstrate practical, <b>everyday English</b> for work or life abroad</li>
-</ul>
-<p>The <b>listening</b> and <b>speaking</b> tests are the same in both papers.</p>
-<p>In <b>IELTS Academic</b>, the reading texts are longer and on more academic themes than they are in General Training. This doesn’t mean that the General Training exam is easier, though! You will still need to have a high level of English to get a good reading score.</p>
-<p>The other main difference is in the <b>writing</b> paper. There are two tasks in both types of the exam, but they are different:</p>
-<ul>
-  <li>In <b>Academic</b>, you are given a graph, chart, or diagram in Task 1, and have to write a description of it.</li>
-  <li>In <b>General Training</b>, you are asked to write a letter or email about a particular topic.</li>
-  <li>In both <b>Academic</b> and <b>General Training</b>, you have to write an essay in Task 2.</li>
-</ul>
-<p>Also, note that if you are taking IELTS for a visa, you will need to take a ‘UKVI’ IELTS test when you book your exam. This is usually a little more expensive than a ‘normal’ IELTS test.</p>
-
-<h2>How Long is IELTS Valid for?</h2>
-<p>All IELTS scores are valid for two years from the date you get the results. However, you may need to take the exam again sooner if you change your plans or if visa laws change.</p>
-<figure style="text-align:center"><img src="https://southbourneschool.co.uk/wp-content/uploads/2025/04/ChatGPT-Image-Apr-16-2025-01_59_17-PM.png" alt="IELTS certificate showing scores, date of issue and expiry date" style="max-width:300px;margin-left:auto;margin-right:auto"></figure>
-
-<h2>Which IELTS Is Right for You?</h2>
-<p>Here’s a simple way to think about it:</p>
-<ul>
-  <li>📚 If your <b>goal is university or college</b>, choose <b>Academic</b>.</li>
-  <li>🛩️ If you’re <b>planning to work, live or train</b> in an English-speaking country, go with <b>General Training</b>.</li>
-</ul>
-<p>The score that you need will be different depending on your plans. For example, many bachelor’s degree courses require an Academic score of 6.0 or 6.5, and Master’s courses will need 7.0 or 7.5. Make sure you know what score you need, as this will help your teacher to prepare you in the best way possible.</p>
-
-<h2>Prepare for IELTS the Natural Way – Through Real English</h2>
-<p>While we don’t offer an IELTS preparation course, many of our students choose to prepare by improving their overall English on our <b>General and Intensive English courses</b>. These classes focus on:</p>
-<ul>
-  <li><b>Fluency and accuracy</b> in speaking</li>
-  <li><b>Grammar and vocabulary</b> development</li>
-  <li><b>Reading and listening</b> comprehension</li>
-  <li><b>Writing for real-world and academic situations</b></li>
-</ul>
-<p>All students on the Intensive course also follow a weekly Writing Programme, which has been designed to improve both general and academic writing ability.</p>
-<p>All of these skills are extremely useful when taking the IELTS exam, and with hard work, you will certainly see your score improve. You may even get a higher score than you expect!</p>
-
-<h2>Study English by the Sea – and Reach Your Goals</h2>
-<p>Located in beautiful <b>Bournemouth</b>, just minutes from the beach, Southbourne School of English offers a friendly international environment where students make friends from all over the world, explore the UK, and build the English skills they need for success.</p>
-<p>Whether your dream is university, immigration, or professional improvement, we’re here to help you every step of the way.</p>
-
-<h2>📩 Ready to start your journey?</h2>
-<p>Explore our <a href="/southbourneschoolofenglish/english-courses/adult-language-courses/general-intensive/">General English and Intensive English courses</a> today or <a href="/southbourneschoolofenglish/contact-us/">speak with our team</a>.</p>
-
+<div class="page-hero">
+  <div class="wrap">
+    <p class="crumbs"><a href="/southbourneschoolofenglish/">Home</a> / <a href="/southbourneschoolofenglish/english-courses/">Courses</a> / Course Calculator</p>
+    <span class="eyebrow">British Council accredited · Est. 1966</span>
+    <h1>Course Calculator 2027</h1>
+    <p class="lede">Choose your course, start date, accommodation, extras and airport transfers — your personal quotation updates instantly as you go.</p>
   </div>
-</article>
-<style>
-.blog-post h2{font-size:22px;color:var(--navy);margin:32px 0 12px}
-.blog-post h3{font-size:19px;color:var(--navy);margin:24px 0 10px}
-.blog-post p{font-size:16px;line-height:1.7;color:var(--ink);margin-bottom:16px}
-.blog-post ul{margin:0 0 20px 20px;font-size:16px;line-height:1.7;color:var(--ink)}
-.blog-post ol{margin:0 0 20px 20px;font-size:16px;line-height:1.7;color:var(--ink)}
-.blog-post li{margin-bottom:8px}
-.blog-post ol li{margin-bottom:18px}
-.blog-post a{color:var(--sky);font-weight:600}
-.blog-post img{border-radius:14px;margin:14px 0 26px;width:100%;height:auto}
-.blog-post figure{margin:14px 0 26px}
-.blog-post figure img{margin:0}
-.blog-post figcaption{font-size:13px;color:var(--ink-soft);font-style:italic;margin-top:8px}
-.blog-post .flight-days{font-size:14px;color:var(--ink-soft);font-weight:600;margin:-2px 0 14px}
-.blog-post .post-note{font-size:13px;color:var(--ink-soft);margin-bottom:18px}
-.blog-post .rest-name{display:block;font-weight:700;font-size:18px;margin-bottom:6px}
-.blog-post .logo-row img{display:inline-block;width:auto;max-height:74px;margin:0 18px 10px 0;border-radius:0;vertical-align:middle}
-.blog-post .close-note{font-size:18px;color:var(--ink-soft)}
-</style>
+  <div class="waves" aria-hidden="true"><svg viewBox="-120 0 1680 130" preserveAspectRatio="none">
+    <path class="wave-back" fill="rgba(255,255,255,.3)" d="M-120,85 C0,40 120,110 300,70 C480,30 600,100 780,60 C960,20 1100,90 1280,55 C1400,30 1500,70 1560,50 L1560,130 L-120,130 Z"/>
+    <path class="wave-mid" fill="rgba(255,255,255,.5)" d="M-120,75 C60,105 180,45 360,80 C540,115 660,35 840,70 C1020,105 1140,40 1320,75 C1440,100 1520,60 1560,65 L1560,130 L-120,130 Z"/>
+    <path class="wave-front" fill="#F5F9FC" d="M-120,95 C80,60 240,115 420,80 C600,45 720,105 900,75 C1080,45 1240,100 1380,70 C1480,50 1540,80 1560,75 L1560,130 L-120,130 Z"/></svg></div>
+</div>
 
+<div id="calcApp">
+<div class="wrap">
+
+  <div class="progress" id="progress" aria-label="Progress">
+    <div class="pstep" data-step="1"><span class="dot">1</span> About you</div>
+    <div class="pstep" data-step="2"><span class="dot">2</span> Course &amp; dates</div>
+    <div class="pstep" data-step="3"><span class="dot">3</span> Accommodation</div>
+    <div class="pstep" data-step="4"><span class="dot">4</span> Extras &amp; transfers</div>
+  </div>
+
+  <div class="grid">
+    <div class="calc-main">
+
+      <!-- STEP 1 · STUDENT -->
+      <section class="card" id="sec-student">
+        <h2><span class="stepnum">1</span> About the student</h2>
+        <p class="sub">Type the student's date of birth. Age is calculated on the course start date — this decides which courses and start dates are available.</p>
+        <div class="frow">
+          <div class="field" style="max-width:280px">
+            <label for="dob">Date of birth</label>
+            <input type="text" id="dob" inputmode="numeric" autocomplete="bday" placeholder="DD/MM/YYYY" maxlength="10">
+            <div class="hint">For example: 23/04/2005</div>
+          </div>
+        </div>
+        <div id="studentMsgs"></div>
+      </section>
+
+      <!-- STEP 2 · COURSE, START DATE & DURATION -->
+      <section class="card disabled" id="sec-course">
+        <h2><span class="stepnum">2</span> Choose your course</h2>
+        <p class="sub">Only courses with start dates available for the student's age are shown.</p>
+        <div class="optgrid" id="courseGrid"></div>
+
+        <div id="dateWrap" hidden style="margin-top:22px">
+          <p class="sub" style="margin-bottom:12px"><b>Course start date</b></p>
+          <div class="frow">
+            <div class="field" style="max-width:340px">
+              <label for="startSel">Start date (2027)</label>
+              <select id="startSel"></select>
+              <div class="hint" id="startHint"></div>
+            </div>
+          </div>
+        </div>
+
+        <div id="durationWrap" hidden style="margin-top:18px">
+          <p class="sub" style="margin-bottom:12px"><b>Duration</b></p>
+          <div class="frow" id="durationRow"></div>
+        </div>
+
+        <div class="badges" id="courseBadges" hidden></div>
+        <div id="courseMsgs"></div>
+      </section>
+
+      <!-- STEP 3 · ACCOMMODATION -->
+      <section class="card disabled" id="sec-acc">
+        <h2><span class="stepnum">3</span> Accommodation</h2>
+        <p class="sub">Homestay runs Sunday to Sunday. Prices are per week.</p>
+        <div class="optgrid" id="accGrid"></div>
+        <div class="frow" id="accWeeksRow" hidden style="margin-top:18px"></div>
+        <div class="checklist" id="accSupps" style="margin-top:18px"></div>
+        <div id="accMsgs"></div>
+      </section>
+
+      <!-- STEP 4 · EXTRAS -->
+      <section class="card disabled" id="sec-extras">
+        <h2><span class="stepnum">4</span> Extras &amp; supplements</h2>
+        <p class="sub">Compulsory items are added automatically. Tick any optional extras you'd like.</p>
+        <div class="checklist" id="extrasList"></div>
+        <div id="extrasMsgs"></div>
+      </section>
+
+      <!-- STEP 4b · TRANSFERS -->
+      <section class="card disabled" id="sec-transfers">
+        <h2><span class="stepnum">✈</span> Airport transfers</h2>
+        <p class="sub">Private taxi transfers from every airport we serve, plus the summer collective coach from Heathrow.</p>
+        <div class="frow">
+          <div class="field">
+            <label for="trType">Transfer</label>
+            <select id="trType">
+              <option value="none">No transfer needed</option>
+              <option value="arrival">Arrival only</option>
+              <option value="departure">Departure only</option>
+              <option value="return">Return (arrival + departure)</option>
+            </select>
+          </div>
+          <div class="field" id="trMethodField" hidden>
+            <label for="trMethod">Service</label>
+            <select id="trMethod"></select>
+          </div>
+          <div class="field" id="trAirportField" hidden>
+            <label for="trAirport">Airport</label>
+            <select id="trAirport"></select>
+          </div>
+          <div class="field" id="trGroupField" hidden>
+            <label for="trGroup">Passengers (taxi)</label>
+            <select id="trGroup">
+              <option value="p13">1–3 people</option>
+              <option value="p48">4–8 people</option>
+            </select>
+          </div>
+        </div>
+        <div class="checklist" id="trOptions" style="margin-top:16px"></div>
+        <div id="trMsgs"></div>
+      </section>
+
+    </div>
+
+    <!-- QUOTE -->
+    <aside>
+      <div class="quote" id="quotePanel">
+        <div class="qhead">
+          <p class="k">Your quotation · 2027</p>
+          <h3 id="qTitle">Instant quote</h3>
+        </div>
+        <div class="qbody" id="qBody">
+          <p class="qempty">Enter the student's date of birth to begin.</p>
+        </div>
+        <div class="qtotal">
+          <span class="tl">Grand total</span>
+          <span class="tv" id="qTotal">£0</span>
+        </div>
+        <div class="qactions">
+          <button class="qbtn primary" id="pdfBtn" type="button" disabled>⬇ Download quote (PDF)</button>
+          <a class="qbtn ghost" href="/southbourneschoolofenglish/request-a-quote/">Request a full quote</a>
+          <button class="qbtn reset" id="resetBtn" type="button">↺ Start again</button>
+        </div>
+        <div class="qfoot">
+          Quotation only — not a booking. All prices from the Southbourne School of English Price List 2027.
+          Please read the <a href="/southbourneschoolofenglish/terms-conditions/">Conditions of Enrolment</a> before booking.
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<div class="mbar" id="mbar">
+  <div><div class="ml">Grand total</div><div class="mv" id="mTotal">£0</div></div>
+  <a href="#quotePanel">View quote</a>
+</div>
+
+
+</div>
+
+</main>
+<div id="printSheet" aria-hidden="true"></div>
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
@@ -1083,7 +1548,7 @@ body.theme-junior .lead .lede{color:rgba(255,255,255,.82)}
 </div>
 <div class="sticky-cta">
   <a class="btn btn-navy" href="https://wa.me/441202422300" target="_blank" rel="noopener">WhatsApp us</a>
-  <a class="btn btn-sun" href="#enquire">Send a message</a>
+  <a class="btn btn-sun" href="/southbourneschoolofenglish/request-a-quote/">Get a free quote</a>
 </div>
 
 <script>
@@ -1286,8 +1751,23 @@ document.head.appendChild(s)}
 document.querySelectorAll("form").forEach(function(f){
 f.addEventListener("focusin",loadRC,{once:true})});
 setTimeout(loadRC,5000)})()
-</script>
 
+/* ===== Search overlay ===== */
+document.querySelectorAll(".search-open").forEach(function(b){
+  b.addEventListener("click",function(){
+    var bar=document.getElementById("searchBar");
+    var isOpen=bar.classList.toggle("open");
+    if(isOpen){
+      var inp=document.getElementById("globalSearch");
+      inp.focus();
+      if(typeof bindSearch==="function")bindSearch(inp,document.getElementById("globalResults"))}
+  })});
+
+
+/* ===== Mobile menu (self-contained) ===== */
+
+
+</script>
 
 <script>
 (function(){
@@ -1315,18 +1795,1017 @@ setTimeout(loadRC,5000)})()
   panel.querySelectorAll("a").forEach(function(a){a.addEventListener("click",close)})})();
 </script>
 
-
 <script>
-(function(){
-  var bar=document.getElementById("searchBar");
-  var input=document.getElementById("globalSearch");
-  var results=document.getElementById("globalResults");
-  if(!bar||!input)return;
+"use strict";
+(() => {
 
-  document.querySelectorAll(".search-open").forEach(function(btn){
-    btn.addEventListener("click",function(){
-      var isOpen=bar.classList.toggle("open");
-      if(isOpen){input.focus();if(typeof bindSearch==="function")bindSearch(input,results)}
-    })})})();
-</script></body>
+/* ==========================================================================
+   1 · PRICING DATA — extracted verbatim from the 2027 price list
+   ========================================================================== */
+
+/* School logo & accreditation marks — embedded so the file stays standalone
+   (extracted from the 2027 price list; accreditation marks are white-on-transparent) */
+const LOGOS = {
+  school: "data:image/webp;base64,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",
+  bc:     "data:image/webp;base64,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",
+  ialc:   "data:image/webp;base64,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",
+  qe:     "data:image/webp;base64,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",
+  euk:    "data:image/webp;base64,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"
+};
+
+const SEASON = {
+  // Summer season (SS): 27 Jun – 22 Aug 2027. Low season (LS): the rest.
+  summerStart: new Date(2027, 5, 27),
+  summerEnd:   new Date(2027, 7, 22),   // exclusive
+  ssLabel: "Summer season · 27 Jun – 22 Aug 2027"
+};
+
+/* UK public holidays 2027 + school closure (from the price list) */
+const HOLIDAYS = new Set([
+  "2027-01-01","2027-03-26","2027-03-29","2027-05-03","2027-05-31",
+  "2027-08-30","2027-12-25","2027-12-27","2027-12-28"
+]);
+const LAST_ADULT_FRIDAY  = new Date(2027,11,17); // school closes 17:00 Fri 17 Dec
+const LAST_JUNIOR_FRIDAY = new Date(2027, 7,20); // last course week before season end 22 Aug
+const FIRST_MONDAY_2027  = new Date(2027, 0, 4);
+
+const FEES = {
+  registration: 120,                     // all courses
+  bookSupplement1wk: 50,                 // compulsory on 1-week courses
+  insuranceBase: 5, insurancePerWeek: 8, // Guard.me
+  hotLunchPerWeek: 45,                   // LS only, adults
+  packedLunchPerWeek: 40,                // £8/weekday — compulsory for students aged 15 and under with no school accommodation
+  ssCourseSupplementPerWeek: 55,         // General & Intensive, courses under 10 weeks, summer weeks
+  ssActivityPackagePerWeek: 135,         // adults, summer weeks
+  christmasSupplement: 85,               // one-off, accommodation over Christmas / New Year
+  roomRetainerPerWeek: 100,              // student on holiday
+  under12PerWeek: 40,                    // junior surcharge
+  umService: 120,                        // Unaccompanied Minor Service (departure)
+  collectiveCheckIn: 80,                 // collective departure check-in assistance
+  examB2: 245,
+  examC1: 250
+};
+/* Note: the £25 change of host / dates fee only applies after enrolment,
+   so it is intentionally not offered in this calculator. */
+
+/* Courses.
+   type: "weekly" (banded £/wk) · "fixed" (set length & price)
+   · "choice" (pick length) · "hours" (one-to-one packages)
+   dateRule: "mondays" · "firstMonday" · "fixedDates" · "juniorMondays" */
+const COURSES = [
+  // ---- Adult (season min age: LS 15+, SS 16+) ----
+  { id:"gen", group:"adult", name:"General English", meta:"15 hours per week",
+    type:"weekly", minWeeks:1, maxWeeks:52, ssSupplement:true, dateRule:"mondays",
+    bands:[[1,11,325],[12,23,295],[24,39,255],[40,Infinity,245]] },
+
+  { id:"int", group:"adult", name:"Intensive English", meta:"21 hours per week",
+    type:"weekly", minWeeks:1, maxWeeks:52, ssSupplement:true, dateRule:"mondays",
+    bands:[[1,11,375],[12,23,345],[24,39,300],[40,Infinity,290]] },
+
+  { id:"oto", group:"adult", name:"One-to-One Private Tuition", meta:"Private lessons, by the hour",
+    type:"hours", dateRule:"mondays",
+    packages:[ {hours:1, price:84, label:"Single lesson · 1 hour"},
+               {hours:5, price:399, label:"×5 · 5 hours (5% off)"},
+               {hours:10, price:756, label:"×10 · 10 hours (10% off)"},
+               {hours:20, price:1428, label:"×20 · 20 hours (15% off)"} ] },
+
+  { id:"b2", group:"adult", name:"B2 First (FCE)", meta:"Cambridge exam course · 21 hrs/wk",
+    type:"fixed", weeks:4, price:1695, examFee:FEES.examB2, examName:"B2 First exam fee",
+    dateRule:"fixedDates",
+    startDates:["2027-02-15","2027-05-24","2027-07-05","2027-08-02","2027-11-15"],
+    examDates:"Exams (Thursdays): 11/03 · 17/06 · 29/07 · 26/08 · 09/12" },
+
+  { id:"c1", group:"adult", name:"C1 Advanced (CAE)", meta:"Cambridge exam course · 21 hrs/wk",
+    type:"fixed", weeks:4, price:1695, examFee:FEES.examC1, examName:"C1 Advanced exam fee",
+    dateRule:"fixedDates",
+    startDates:["2027-02-15","2027-05-24","2027-07-05","2027-08-02","2027-11-15"],
+    examDates:"Exams (Thursdays): 11/03 · 17/06 · 29/07 · 26/08 · 09/12" },
+
+  { id:"uni", group:"adult", name:"English to Prepare for University", meta:"Fixed 4 weeks · 21 hrs/wk · max 10 · min B1",
+    type:"fixed", weeks:4, price:1595, dateRule:"firstMonday" },
+
+  { id:"exec", group:"adult", name:"Over 30s Executive English", meta:"21 hrs/wk + 2 hrs one-to-one · max 5 · min B1 · incl. hot lunch",
+    type:"weekly", minWeeks:1, maxWeeks:52, minAge:30, dateRule:"firstMonday",
+    bands:[[1,Infinity,935]] },
+
+  { id:"creators", group:"adult", name:"English for Content Creators", meta:"Creator curriculum · 21 hrs/wk · max 8 · min B1",
+    type:"choice", dateRule:"firstMonday",
+    options:[ {weeks:2, price:800}, {weeks:4, price:1595} ] },
+
+  // ---- Junior (ages 9–15, summer season only) ----
+  { id:"jrplus", group:"junior", name:"Summer General English +", meta:"15 hrs/wk + activities & full-day excursion",
+    type:"weekly", minWeeks:1, maxWeeks:8, dateRule:"juniorMondays", bands:[[1,8,595]] },
+
+  { id:"jrlessons", group:"junior", name:"Summer General English (lessons only)", meta:"15 hrs/wk · privately arranged accommodation",
+    type:"weekly", minWeeks:1, maxWeeks:8, dateRule:"juniorMondays", bands:[[1,8,415]], noSchoolAccommodation:true }
+];
+
+/* Accommodation (per week, Sunday arrival / Sunday departure) */
+const ACCOMMODATION = {
+  adult: [
+    { id:"none",   name:"No accommodation", meta:"I'll arrange my own accommodation" },
+    { id:"pb",     name:"Part board homestay", meta:"Breakfast & dinner Mon–Fri · full board at weekends · age 16+",
+      minAge:16, ls:185, ss:220 },
+    { id:"fb",     name:"Full board homestay", meta:"Part board + packed lunch from school Mon–Fri · age 15+ · low season",
+      minAge:15, ls:215, ss:null, lsOnly:true },
+    { id:"res",    name:"Self-catered residential", meta:"University campus, single en-suite · age 18+ · minimum 4 weeks",
+      minAge:18, ls:305, ss:335, minWeeks:4 },
+    { id:"foster", name:"Private foster family homestay (full board)", meta:"Required for 15-year-olds staying 27+ nights (UK law)",
+      flat:330, fosterOnly:true }
+  ],
+  junior: [
+    { id:"none",    name:"Privately arranged accommodation", meta:"No school accommodation (required for 9-year-olds)" },
+    { id:"jfb",     name:"Full board homestay", meta:"Twin room · all meals · age 10+", minAge:10, flat:260 },
+    { id:"jfoster", name:"Full board private foster family", meta:"Required for ages 10–15 staying 27+ nights (UK law) · age 10+",
+      minAge:10, flat:330 }
+  ]
+};
+
+const DIET = { part:37, full:49, junior:49 };  // special diet, per week
+
+/* Airport transfers — private taxi, per journey */
+const TAXIS = [
+  { id:"bmth", name:"Bournemouth",           p13:65,  p48:105 },
+  { id:"sou",  name:"Southampton",           p13:125, p48:190 },
+  { id:"lhr",  name:"London Heathrow",       p13:230, p48:305 },
+  { id:"lgw",  name:"London Gatwick",        p13:260, p48:320 },
+  { id:"ltn",  name:"London Luton",          p13:280, p48:325 },
+  { id:"stn",  name:"London City / Stansted",p13:310, p48:385 }
+];
+
+const COLLECTIVE = {
+  pricePerJourney: 155,   // Heathrow ⇄ homestay, each way, per person
+  arrivals:"27/06 · 04/07 · 11/07 · 18/07 · 25/07 · 01/08 · 08/08 · 15/08",
+  departures:"04/07 · 11/07 · 18/07 · 25/07 · 01/08 · 08/08 · 15/08 · 22/08"
+};
+
+/* ==========================================================================
+   2 · CALCULATOR STATE
+   ========================================================================== */
+const state = {
+  dob:null, courseId:null, startDate:null,
+  weeks:null,             // weekly / choice courses
+  otoPackage:null,        // one-to-one hours package index
+  accId:null,
+  accWeeks:null,          // accommodation weeks (defaults to course weeks)
+  accSameAsCourse:true,
+  specialDiet:false,
+  roomRetainerWeeks:0,
+  insurance:false, hotLunch:false, activityPackage:false,
+  examEntry:true,
+  trType:"none", trMethod:"taxi", trAirport:"lhr", trGroup:"p13",
+  umService:false, checkInAssist:false
+};
+
+/* ==========================================================================
+   3 · DATE HELPERS & START-DATE GENERATION
+   ========================================================================== */
+const $  = s => document.querySelector(s);
+const gbp = n => "£" + Math.round(n).toLocaleString("en-GB");
+const DAY = 864e5;
+const addDays = (d,n) => new Date(d.getFullYear(), d.getMonth(), d.getDate()+n);
+const isoOf = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+const parseISO = v => { if(!v) return null; const [y,m,d]=v.split("-").map(Number); return new Date(y,m-1,d); };
+const inSummer = d => d >= SEASON.summerStart && d < SEASON.summerEnd;
+
+function ageOn(dob, date){
+  let a = date.getFullYear() - dob.getFullYear();
+  const m = date.getMonth() - dob.getMonth();
+  if (m < 0 || (m === 0 && date.getDate() < dob.getDate())) a--;
+  return a;
+}
+function ordinal(n){
+  const s = ["th","st","nd","rd"], v = n % 100;
+  return n + (s[(v-20)%10] || s[v] || s[0]);
+}
+const MONTHS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const WEEKDAYS = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const labelDate = d => `${WEEKDAYS[d.getDay()]} ${ordinal(d.getDate())} ${MONTHS[d.getMonth()]}`;
+
+/* End of the last teaching week (Mon–Fri) for a start date + weeks */
+function courseEnd(start, weeks){
+  const toFriday = (5 - start.getDay() + 7) % 7;   // Mon→4, Tue→3
+  return addDays(start, (weeks-1)*7 + toFriday);
+}
+
+/* All Mondays 4 Jan – 13 Dec 2027; bank-holiday Mondays shift to Tuesday */
+function allMondays(){
+  const out = [];
+  for (let d = FIRST_MONDAY_2027; courseEnd(d,1) <= LAST_ADULT_FRIDAY; d = addDays(d,7)){
+    let s = d;
+    while (HOLIDAYS.has(isoOf(s))) s = addDays(s,1);
+    out.push(s);
+  }
+  return out;
+}
+/* First Monday of each month; if a public holiday, the next working day
+   (May 2027: Tuesday 4th, exactly as on the price list) */
+function firstMondays(){
+  const out = [];
+  for (let m = 0; m < 12; m++){
+    let d = new Date(2027, m, 1);
+    while (d.getDay() !== 1) d = addDays(d,1);
+    while (HOLIDAYS.has(isoOf(d))) d = addDays(d,1);
+    out.push(d);
+  }
+  return out;
+}
+/* Junior summer Mondays: 28 Jun – 16 Aug 2027 */
+function juniorMondays(){
+  const out = [];
+  for (let d = new Date(2027,5,28); courseEnd(d,1) <= LAST_JUNIOR_FRIDAY; d = addDays(d,7)) out.push(d);
+  return out;
+}
+
+/* Age eligibility for a course on a given start date */
+function ageEligibleOn(course, dob, d){
+  const age = ageOn(dob, d);
+  if (course.group === "junior") return age >= 9 && age <= 15;
+  if (course.minAge) return age >= course.minAge;      // Executive 30+
+  return age >= (inSummer(d) ? 16 : 15);               // adult: LS 15+, SS 16+
+}
+
+/* Valid start dates for a course + student */
+function startDateOptions(course, dob){
+  let dates;
+  switch (course.dateRule){
+    case "fixedDates":    dates = course.startDates.map(parseISO); break;
+    case "firstMonday":   dates = firstMondays(); break;
+    case "juniorMondays": dates = juniorMondays(); break;
+    default:              dates = allMondays();
+  }
+  // fixed-length courses must finish before the school closes
+  if (course.type === "fixed")
+    dates = dates.filter(d => courseEnd(d, course.weeks) <= LAST_ADULT_FRIDAY);
+  // choice courses need at least their shortest option to fit
+  if (course.type === "choice"){
+    const minW = Math.min(...course.options.map(o=>o.weeks));
+    dates = dates.filter(d => courseEnd(d, minW) <= LAST_ADULT_FRIDAY);
+  }
+  return dates.filter(d => ageEligibleOn(course, dob, d));
+}
+
+/* Longest course possible from a given start date */
+function maxWeeksFrom(course, start){
+  const lastFri = course.group === "junior" ? LAST_JUNIOR_FRIDAY : LAST_ADULT_FRIDAY;
+  const cap = Math.floor((lastFri - courseEnd(start,1)) / (7*DAY)) + 1;
+  return Math.min(course.maxWeeks || 52, Math.max(1, cap));
+}
+
+function summerWeeks(start, weeks){
+  let n = 0;
+  for (let i=0;i<weeks;i++) if (inSummer(addDays(start, i*7))) n++;
+  return n;
+}
+function bandPrice(bands, weeks){
+  for (const [lo,hi,p] of bands) if (weeks>=lo && weeks<=hi) return p;
+  return bands[bands.length-1][2];
+}
+
+/* ==========================================================================
+   4 · ELIGIBILITY
+   ========================================================================== */
+function currentCourse(){ return COURSES.find(c => c.id === state.courseId) || null; }
+
+function courseWeeks(){
+  const c = currentCourse();
+  if (!c) return 0;
+  if (c.type === "fixed") return c.weeks;
+  if (c.type === "hours") return 0;
+  return state.weeks || 0;
+}
+function studentAge(){
+  return (state.dob && state.startDate) ? ageOn(state.dob, state.startDate) : null;
+}
+function eligibleCourses(){
+  if (!state.dob) return [];
+  return COURSES.filter(c => startDateOptions(c, state.dob).length > 0);
+}
+function eligibleAccommodation(){
+  const c = currentCourse(), age = studentAge();
+  if (!c || age == null) return [];
+  const list = ACCOMMODATION[c.group === "junior" ? "junior" : "adult"];
+  return list.filter(a => {
+    if (a.id === "none") return true;
+    if (c.noSchoolAccommodation) return false;           // lessons-only junior course
+    if (a.minAge && age < a.minAge) return false;
+    if (a.fosterOnly && age !== 15) return false;        // adult list: shown for 15-year-olds
+    return true;
+  });
+}
+/* Foster-family rule: ages 10–15 staying 27+ nights (≥ 4 weeks) */
+function fosterRequired(age, weeks){
+  return age != null && age >= 10 && age <= 15 && weeks >= 4;
+}
+function durationChosen(){
+  const c = currentCourse();
+  if (!c || !state.startDate) return false;
+  if (c.type === "fixed") return true;
+  if (c.type === "hours") return state.otoPackage != null;
+  return !!state.weeks;
+}
+
+/* ==========================================================================
+   5 · QUOTE CALCULATION — returns grouped line items + total
+   ========================================================================== */
+function calculate(){
+  const groups = [];
+  const add = (gname, lines) => { if (lines.length) groups.push({gname, lines}); };
+  let total = 0;
+  const line = (arr, ql, qv) => { arr.push({ql,qv}); total += qv; };
+
+  const c = currentCourse();
+  const age = studentAge();
+  if (!state.dob || !c || !state.startDate)
+    return { groups, total, ready:!!state.dob, course:c };
+
+  const wks = courseWeeks();
+
+  /* ---- Tuition ---- */
+  const t = [];
+  if (c.type === "weekly" && wks){
+    const pw = bandPrice(c.bands, wks);
+    line(t, `${c.name} · ${wks} wk${wks>1?"s":""} × ${gbp(pw)}`, pw*wks);
+  } else if (c.type === "fixed"){
+    line(t, `${c.name} · ${c.weeks} weeks`, c.price);
+  } else if (c.type === "choice" && state.weeks){
+    const opt = c.options.find(o=>o.weeks===state.weeks);
+    if (opt) line(t, `${c.name} · ${opt.weeks} weeks`, opt.price);
+  } else if (c.type === "hours" && state.otoPackage != null){
+    const p = c.packages[state.otoPackage];
+    line(t, `One-to-One · ${p.label.replace(/ \(.*\)/,"")}`, p.price);
+  }
+  /* SS course supplement: General & Intensive, under 10 weeks, per summer week */
+  if (c.ssSupplement && wks && wks < 10){
+    const sw = summerWeeks(state.startDate, wks);
+    if (sw) line(t, `Summer course supplement · ${sw} wk × £55`, FEES.ssCourseSupplementPerWeek*sw);
+  }
+  /* Optional summer activity package (adults) */
+  if (state.activityPackage && c.group==="adult" && wks){
+    const sw = summerWeeks(state.startDate, wks);
+    if (sw) line(t, `Summer activity package · ${sw} wk × £135`, FEES.ssActivityPackagePerWeek*sw);
+  }
+  add("Tuition", t);
+
+  /* ---- Accommodation ---- */
+  const a = [];
+  const accList = eligibleAccommodation();
+  let acc = accList.find(x => x.id === state.accId) || null;
+  let accWeeks = 0;
+  if (acc && acc.id !== "none"){
+    accWeeks = state.accSameAsCourse ? Math.max(wks,0) : (state.accWeeks||0);
+    if (c.type === "hours") accWeeks = state.accWeeks || 1;
+
+    /* Auto-upgrade to private foster family where UK law requires it */
+    if (fosterRequired(age, accWeeks) && !/foster/.test(acc.id)){
+      const list = ACCOMMODATION[c.group === "junior" ? "junior" : "adult"];
+      acc = list.find(x => /foster/.test(x.id)) || acc;
+    }
+
+    if (accWeeks > 0){
+      if (acc.flat != null){
+        line(a, `${acc.name} · ${accWeeks} wk × ${gbp(acc.flat)}`, acc.flat*accWeeks);
+      } else {
+        const sw = summerWeeks(state.startDate, accWeeks);
+        const lw = accWeeks - sw;
+        if (lw) line(a, `${acc.name} (low season) · ${lw} wk × ${gbp(acc.ls)}`, acc.ls*lw);
+        if (sw && acc.ss != null) line(a, `${acc.name} (summer) · ${sw} wk × ${gbp(acc.ss)}`, acc.ss*sw);
+      }
+      /* Christmas / New Year supplement — one-off if the stay covers 25 Dec */
+      const stayEnd = addDays(state.startDate, accWeeks*7);
+      const xmas = new Date(2027,11,25);
+      if (state.startDate <= xmas && stayEnd > xmas)
+        line(a, "Christmas / New Year supplement", FEES.christmasSupplement);
+      /* Special diet */
+      if (state.specialDiet){
+        const dw = c.group==="junior" ? DIET.junior : (acc.id==="pb" ? DIET.part : DIET.full);
+        line(a, `Special diet · ${accWeeks} wk × ${gbp(dw)}`, dw*accWeeks);
+      }
+      /* Room retainer */
+      if (state.roomRetainerWeeks > 0)
+        line(a, `Room retainer (holiday) · ${state.roomRetainerWeeks} wk × £100`, FEES.roomRetainerPerWeek*state.roomRetainerWeeks);
+    }
+  }
+  add("Accommodation", a);
+
+  /* ---- Fees & extras ---- */
+  const e = [];
+  line(e, "Registration fee (all courses)", FEES.registration);
+  if ((c.type==="weekly"||c.type==="choice") && wks === 1)
+    line(e, "Book supplement (1-week course)", FEES.bookSupplement1wk);
+  if (c.group === "junior" && age < 12 && wks)
+    line(e, `Under-12 surcharge · ${wks} wk × £40`, FEES.under12PerWeek*wks);
+  /* Students aged 15 and under (on arrival) with no school accommodation
+     must have a packed lunch from school — £8/weekday = £40 per week of stay */
+  if (age <= 15 && state.accId === "none" && wks)
+    line(e, `Packed lunch at school (under 16, no accommodation) · ${wks} wk × £40`, FEES.packedLunchPerWeek*wks);
+  if (c.examFee && state.examEntry)
+    line(e, c.examName, c.examFee);
+  if (state.insurance){
+    const iw = Math.max(wks, accWeeks, 1);
+    line(e, `Insurance (Guard.me) · £5 + ${iw} wk × £8`, FEES.insuranceBase + FEES.insurancePerWeek*iw);
+  }
+  if (state.hotLunch && c.group==="adult" && wks){
+    const lw = wks - summerWeeks(state.startDate, wks);
+    if (lw) line(e, `Hot lunch meal deal (low season) · ${lw} wk × £45`, FEES.hotLunchPerWeek*lw);
+  }
+  add("Fees & extras", e);
+
+  /* ---- Transfers ---- */
+  const tr = [];
+  if (state.trType !== "none"){
+    const journeys = state.trType === "return" ? 2 : 1;
+    if (state.trMethod === "collective"){
+      line(tr, `Summer collective transfer · Heathrow ⇄ homestay × ${journeys}`, COLLECTIVE.pricePerJourney*journeys);
+      if (state.checkInAssist && (state.trType==="departure"||state.trType==="return"))
+        line(tr, "Departure check-in assistance (1-hr wait incl.)", FEES.collectiveCheckIn);
+    } else {
+      const ap = TAXIS.find(x=>x.id===state.trAirport);
+      if (ap){
+        const grp = state.trGroup==="p13" ? "1–3 ppl" : "4–8 ppl";
+        line(tr, `Private taxi · ${ap.name} (${grp}) × ${journeys}`, ap[state.trGroup]*journeys);
+      }
+    }
+    if (state.umService && (state.trType==="departure"||state.trType==="return"))
+      line(tr, "Unaccompanied Minor Service (departure)", FEES.umService);
+  }
+  add("Airport transfers", tr);
+
+  return { groups, total, ready:true, course:c, weeks:wks, accWeeks };
+}
+
+/* ==========================================================================
+   6 · RENDERING
+   ========================================================================== */
+const els = {
+  dob:$("#dob"), studentMsgs:$("#studentMsgs"),
+  secCourse:$("#sec-course"), courseGrid:$("#courseGrid"),
+  dateWrap:$("#dateWrap"), startSel:$("#startSel"), startHint:$("#startHint"),
+  durationWrap:$("#durationWrap"), durationRow:$("#durationRow"),
+  courseBadges:$("#courseBadges"), courseMsgs:$("#courseMsgs"),
+  secAcc:$("#sec-acc"), accGrid:$("#accGrid"), accWeeksRow:$("#accWeeksRow"),
+  accSupps:$("#accSupps"), accMsgs:$("#accMsgs"),
+  secExtras:$("#sec-extras"), extrasList:$("#extrasList"), extrasMsgs:$("#extrasMsgs"),
+  secTr:$("#sec-transfers"), trType:$("#trType"), trMethodField:$("#trMethodField"),
+  trMethod:$("#trMethod"), trAirportField:$("#trAirportField"), trAirport:$("#trAirport"),
+  trGroupField:$("#trGroupField"), trGroup:$("#trGroup"), trOptions:$("#trOptions"), trMsgs:$("#trMsgs"),
+  qBody:$("#qBody"), qTotal:$("#qTotal"), qTitle:$("#qTitle"), mTotal:$("#mTotal"),
+  progress:$("#progress"), pdfBtn:$("#pdfBtn"), printSheet:$("#printSheet"), resetBtn:$("#resetBtn")
+};
+
+const msgHTML = (kind, text) => {
+  const ic = kind==="warn" ? "!" : kind==="ok" ? "✓" : "i";
+  return `<div class="msg ${kind}"><span class="ic">${ic}</span><span>${text}</span></div>`;
+};
+
+/* ---- DOB text input: auto-format DD/MM/YYYY & parse ---- */
+function formatDobInput(){
+  const digits = els.dob.value.replace(/\D/g,"").slice(0,8);
+  let out = digits;
+  if (digits.length > 4) out = digits.slice(0,2)+"/"+digits.slice(2,4)+"/"+digits.slice(4);
+  else if (digits.length > 2) out = digits.slice(0,2)+"/"+digits.slice(2);
+  els.dob.value = out;
+}
+function parseDob(){
+  const m = els.dob.value.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+  if (!m) return { dob:null, complete:false };
+  const [ , dd, mm, yyyy ] = m.map(Number);
+  const d = new Date(yyyy, mm-1, dd);
+  const valid = d.getFullYear()===yyyy && d.getMonth()===mm-1 && d.getDate()===dd
+                && yyyy >= 1920 && d < new Date();
+  return { dob: valid ? d : null, complete:true };
+}
+function renderStudentMsgs(complete){
+  let m = "";
+  if (complete && !state.dob)
+    m = msgHTML("warn","That doesn't look like a valid date — please check and enter it as DD/MM/YYYY, e.g. 23/04/2005.");
+  else if (state.dob){
+    const age27 = ageOn(state.dob, new Date(2027,11,31));
+    if (age27 < 9)
+      m = msgHTML("warn","We're sorry — our courses are for students aged 9 and over.");
+    else if (eligibleCourses().length === 0)
+      m = msgHTML("warn","No courses have available start dates for this student in 2027.");
+    else
+      m = msgHTML("ok","Great — choose a course below. Only courses with start dates available for this student are shown.");
+  }
+  els.studentMsgs.innerHTML = m;
+  els.dob.classList.toggle("invalid", complete && !state.dob);
+}
+
+/* ---- Courses ---- */
+function renderCourses(){
+  const list = eligibleCourses();
+  const enabled = !!state.dob && list.length > 0;
+  els.secCourse.classList.toggle("disabled", !enabled);
+  if (!enabled){
+    els.courseGrid.innerHTML=""; els.dateWrap.hidden=true; els.durationWrap.hidden=true;
+    els.courseBadges.hidden=true; els.courseMsgs.innerHTML=""; return;
+  }
+  els.courseGrid.innerHTML = list.map(c=>{
+    let price;
+    if (c.type==="weekly") price = `from ${gbp(c.bands[c.bands.length-1][2])}/wk`;
+    else if (c.type==="fixed") price = `${gbp(c.price)} · ${c.weeks} weeks`;
+    else if (c.type==="choice") price = `from ${gbp(c.options[0].price)}`;
+    else price = `from ${gbp(c.packages[0].price)}/hour`;
+    const flag = c.group==="junior" ? `<span class="flag">Junior · summer</span>`
+               : c.minAge===30 ? `<span class="flag blue">Ages 30+</span>` : "";
+    const sel = state.courseId===c.id ? " selected" : "";
+    return `<label class="opt${sel}" data-course="${c.id}">
+      <input type="radio" name="course" value="${c.id}"${sel?" checked":""}>
+      ${flag}<span class="oname">${c.name}</span>
+      <span class="ometa">${c.meta}</span>
+      <span class="oprice">${price}</span><span class="tick"></span></label>`;
+  }).join("");
+  els.courseGrid.querySelectorAll(".opt").forEach(o=>{
+    o.addEventListener("click", ()=>{
+      if (state.courseId === o.dataset.course) return;
+      state.courseId = o.dataset.course;
+      state.startDate = null; state.weeks = null; state.otoPackage = null;
+      state.accId = null; state.specialDiet=false; state.roomRetainerWeeks=0;
+      state.activityPackage=false; state.hotLunch=false; state.examEntry=true;
+      update();
+    });
+  });
+}
+
+/* ---- Start date dropdown (after course, before duration) ---- */
+function renderStartDate(){
+  const c = currentCourse();
+  if (!c || !state.dob){ els.dateWrap.hidden = true; return; }
+  els.dateWrap.hidden = false;
+
+  const dates = startDateOptions(c, state.dob);
+  const iso = state.startDate ? isoOf(state.startDate) : "";
+
+  /* Group Mondays by month for long lists */
+  if (dates.length > 14){
+    let html = `<option value="">Choose a start date…</option>`, curM = -1;
+    for (const d of dates){
+      if (d.getMonth() !== curM){
+        if (curM !== -1) html += `</optgroup>`;
+        curM = d.getMonth();
+        html += `<optgroup label="${MONTHS[curM]} 2027">`;
+      }
+      html += `<option value="${isoOf(d)}"${isoOf(d)===iso?" selected":""}>${labelDate(d)}</option>`;
+    }
+    html += `</optgroup>`;
+    els.startSel.innerHTML = html;
+  } else {
+    els.startSel.innerHTML = `<option value="">Choose a start date…</option>` +
+      dates.map(d=>`<option value="${isoOf(d)}"${isoOf(d)===iso?" selected":""}>${labelDate(d)} 2027</option>`).join("");
+  }
+
+  const hints = {
+    fixedDates:    `${c.name} runs on 5 fixed start dates in 2027. ${c.examDates||""}`,
+    firstMonday:   `${c.name} starts on the first Monday of each month (bank-holiday Mondays move to the Tuesday — in May, Tuesday 4th).`,
+    juniorMondays: `Junior summer courses start on Mondays, 28 June – 16 August 2027.`,
+    mondays:       `Courses start on Mondays (bank-holiday Mondays move to the Tuesday).`
+  };
+  els.startHint.textContent = hints[c.dateRule] || hints.mondays;
+}
+
+/* ---- Duration dropdown ---- */
+function renderDuration(){
+  const c = currentCourse();
+  if (!c || !state.startDate){ els.durationWrap.hidden = true; return; }
+  els.durationWrap.hidden = false;
+  let html = "";
+
+  if (c.type === "fixed"){
+    // Fixed-length courses are chosen automatically
+    html = `<div class="field" style="max-width:340px"><label>Duration</label>
+      <select disabled><option>${c.weeks} weeks (fixed course)</option></select>
+      <div class="hint">This course has a fixed length of ${c.weeks} weeks — selected automatically.</div></div>`;
+  }
+  else if (c.type === "choice"){
+    const opts = c.options.filter(o => courseEnd(state.startDate, o.weeks) <= LAST_ADULT_FRIDAY);
+    if (opts.length === 1 && state.weeks !== opts[0].weeks){ state.weeks = opts[0].weeks; }
+    html = `<div class="field" style="max-width:340px"><label for="weeksSel">Course length</label>
+      <select id="weeksSel" ${opts.length===1?"disabled":""}>
+      ${opts.length>1?`<option value="">Choose…</option>`:""}
+      ${opts.map(o=>`<option value="${o.weeks}"${state.weeks===o.weeks?" selected":""}>${o.weeks} weeks · ${gbp(o.price)}</option>`).join("")}
+      </select>
+      ${opts.length===1?`<div class="hint">Only the ${opts[0].weeks}-week option fits before the school closes for Christmas — selected automatically.</div>`:""}</div>`;
+  }
+  else if (c.type === "hours"){
+    html = `<div class="field" style="max-width:340px"><label for="otoSel">Lesson package</label>
+      <select id="otoSel"><option value="">Choose…</option>
+      ${c.packages.map((p,i)=>`<option value="${i}"${state.otoPackage===i?" selected":""}>${p.label} · ${gbp(p.price)}</option>`).join("")}
+      </select></div>`;
+  }
+  else {
+    const max = maxWeeksFrom(c, state.startDate);
+    if (state.weeks && state.weeks > max) state.weeks = null;
+    const priced = c.bands.length > 1;
+    let opts = `<option value="">Choose…</option>`;
+    for (let w = c.minWeeks; w <= max; w++)
+      opts += `<option value="${w}"${state.weeks===w?" selected":""}>${w} week${w>1?"s":""}${priced?` · ${gbp(bandPrice(c.bands,w))}/wk`:""}</option>`;
+    html = `<div class="field" style="max-width:340px"><label for="weeksSel">Number of weeks</label>
+      <select id="weeksSel">${opts}</select>
+      <div class="hint">${c.group==="junior"
+        ? `Up to ${max} week${max>1?"s":""} from this start date (season ends 22 August).`
+        : priced ? `Longer courses get a lower weekly rate. Up to ${max} weeks from this start date.`
+                 : `Up to ${max} weeks from this start date.`}</div></div>`;
+  }
+  els.durationRow.innerHTML = html;
+
+  const wSel=$("#weeksSel"), oSel=$("#otoSel");
+  if (wSel && !wSel.disabled) wSel.addEventListener("change", e=>{ state.weeks = e.target.value?+e.target.value:null; update(); });
+  if (oSel) oSel.addEventListener("change", e=>{ state.otoPackage = e.target.value===""?null:+e.target.value; update(); });
+}
+
+function renderCourseBadgesAndMsgs(){
+  const c = currentCourse(), age = studentAge();
+  if (!c || !state.startDate){ els.courseBadges.hidden=true; els.courseMsgs.innerHTML=""; return; }
+  const seasonBadge = inSummer(state.startDate)
+    ? `<span class="badge ss">☀ ${SEASON.ssLabel}</span>`
+    : `<span class="badge">❄ Low season start</span>`;
+  const endBadge = durationChosen() && courseWeeks()
+    ? `<span class="badge">Ends: <b>${labelDate(courseEnd(state.startDate, courseWeeks()))}</b></span>` : "";
+  els.courseBadges.innerHTML =
+    `<span class="badge">Age on start date: <b>${age}</b></span>${seasonBadge}${endBadge}`;
+  els.courseBadges.hidden = false;
+
+  let m = "";
+  if (age === 15 && !inSummer(state.startDate) && c.group==="adult")
+    m += msgHTML("info","15-year-olds are welcome on adult courses in low season. If staying 27+ nights, UK law requires private foster family homestay (£330/week, full board).");
+  if (c.id==="jrlessons")
+    m += msgHTML("info","This course is for students with privately arranged accommodation — school homestay is not available with it.");
+  els.courseMsgs.innerHTML = m;
+}
+
+/* ---- Accommodation ---- */
+function renderAccommodation(){
+  const c = currentCourse(), age = studentAge();
+  const enabled = c && durationChosen();
+  els.secAcc.classList.toggle("disabled", !enabled);
+  if (!enabled){ els.accGrid.innerHTML=""; els.accWeeksRow.hidden=true; els.accSupps.innerHTML=""; els.accMsgs.innerHTML=""; return; }
+
+  const list = eligibleAccommodation();
+  els.accGrid.innerHTML = list.map(a=>{
+    let price = "";
+    if (a.flat!=null) price = `${gbp(a.flat)}/week`;
+    else if (a.ls!=null)
+      price = a.ss!=null ? `LS ${gbp(a.ls)} · SS ${gbp(a.ss)} /week` : `${gbp(a.ls)}/week (low season)`;
+    const sel = state.accId===a.id ? " selected" : "";
+    return `<label class="opt${sel}" data-acc="${a.id}">
+      <input type="radio" name="acc" value="${a.id}"${sel?" checked":""}>
+      <span class="oname">${a.name}</span><span class="ometa">${a.meta}</span>
+      ${price?`<span class="oprice">${price}</span>`:""}<span class="tick"></span></label>`;
+  }).join("");
+  els.accGrid.querySelectorAll(".opt").forEach(o=>{
+    o.addEventListener("click", ()=>{ state.accId = o.dataset.acc; update(); });
+  });
+
+  const acc = list.find(x=>x.id===state.accId);
+  const wks = courseWeeks();
+
+  /* Accommodation weeks control */
+  if (acc && acc.id!=="none"){
+    els.accWeeksRow.hidden = false;
+    const isHours = c.type==="hours";
+    const same = isHours ? false : state.accSameAsCourse;
+    const val = same ? wks : (state.accWeeks || (isHours ? 1 : wks));
+    els.accWeeksRow.innerHTML = `
+      ${!isHours?`<div class="field" style="flex:0 1 240px"><label for="accSame">Accommodation length</label>
+        <select id="accSame">
+          <option value="1"${same?" selected":""}>Same as course (${wks} wk${wks>1?"s":""})</option>
+          <option value="0"${!same?" selected":""}>Choose different length</option>
+        </select></div>`:""}
+      <div class="field" style="flex:0 1 200px"><label for="accWeeks">Weeks of accommodation</label>
+        <input type="number" id="accWeeks" min="1" max="52" step="1" value="${val}" ${same?"disabled":""}>
+        <div class="hint">Sunday arrival → Sunday departure.</div></div>`;
+    const sameSel = $("#accSame"), awIn = $("#accWeeks");
+    if (sameSel) sameSel.addEventListener("change", e=>{ state.accSameAsCourse = e.target.value==="1"; if(!state.accSameAsCourse) state.accWeeks = wks; update(); });
+    if (awIn) awIn.addEventListener("input", e=>{ state.accWeeks = e.target.value?Math.max(1,Math.floor(+e.target.value)):null; update(); });
+  } else {
+    els.accWeeksRow.hidden = true;
+  }
+
+  /* Supplements relevant to the chosen accommodation */
+  let supps = "", msgs = "";
+  if (acc && acc.id!=="none"){
+    const accWeeks = (c.type==="hours") ? (state.accWeeks||1) : (state.accSameAsCourse ? wks : (state.accWeeks||0));
+
+    if (fosterRequired(age, accWeeks) && !/foster/.test(acc.id))
+      msgs += msgHTML("info", `Because the student is ${age} and staying 27+ nights, UK law requires <b>private foster family homestay</b>. We've automatically applied the foster family rate of £330/week (full board).`);
+    if (acc.minWeeks && accWeeks && accWeeks < acc.minWeeks)
+      msgs += msgHTML("warn", `Self-catered residential is available for <b>${acc.minWeeks}+ week stays only</b>. Please increase the stay or choose homestay.`);
+    if (acc.lsOnly && accWeeks && summerWeeks(state.startDate, accWeeks)>0)
+      msgs += msgHTML("warn", `Full board homestay for adults is a <b>low season</b> option — in the summer season (27 Jun – 22 Aug) please choose part board homestay instead.`);
+
+    if (acc.id !== "res"){
+      const dietPrice = c.group==="junior" ? DIET.junior : (acc.id==="pb" ? DIET.part : DIET.full);
+      supps += chkHTML("specialDiet", state.specialDiet,
+        "Special diet supplement", "Gluten-free, lactose-free, vegan etc. Must be requested at booking. Halal is at each host's discretion.",
+        `${gbp(dietPrice)}/wk`);
+    }
+    if (c.group === "adult"){
+      supps += `<div class="chk ${state.roomRetainerWeeks>0?"checked":""}" style="cursor:default">
+        <div class="ctext"><div class="cname">Room retainer (student on holiday)</div>
+        <div class="cmeta">Keeps the room while the student takes a holiday mid-course.</div></div>
+        <div class="field" style="flex:0 0 110px;min-width:110px"><label>Weeks</label>
+          <input type="number" id="retainerWeeks" min="0" max="12" step="1" value="${state.roomRetainerWeeks}"></div>
+        <span class="cprice">£100/wk</span></div>`;
+    }
+    if (inSummer(state.startDate) && age>=16 && age<=17 && c.group==="adult")
+      msgs += msgHTML("info","In summer, students aged 16–17 share twin rooms with a different nationality of similar age. Single rooms are guaranteed for 18-year-olds year round.");
+  }
+  if (c.noSchoolAccommodation)
+    msgs += msgHTML("info","Summer General English (lessons only) is for students with privately arranged accommodation.");
+  if (age<=15 && state.accId==="none" && courseWeeks()>0)
+    msgs += msgHTML("info","Because the student is aged 15 or under and not in school accommodation, a <b>packed lunch from school is compulsory</b> — £8 per weekday (£40 per week). It's been added to the quote automatically.");
+  if (age===9 && c.group==="junior")
+    msgs += msgHTML("info","We can accept 9-year-olds in class with privately arranged accommodation only. Homestay requires students to be 10+.");
+
+  els.accSupps.innerHTML = supps;
+  els.accMsgs.innerHTML = msgs;
+  bindChk(els.accSupps);
+  const rw = $("#retainerWeeks");
+  if (rw) rw.addEventListener("input", e=>{ state.roomRetainerWeeks = e.target.value?Math.max(0,Math.floor(+e.target.value)):0; update(); });
+}
+
+/* Checkbox builder */
+function chkHTML(key, checked, name, meta, price, locked=false){
+  return `<label class="chk ${checked?"checked":""} ${locked?"locked":""}" data-key="${key}">
+    <input type="checkbox" ${checked?"checked":""} ${locked?"disabled":""}>
+    <div class="ctext"><div class="cname">${name} ${locked?'<span class="lock">Included automatically</span>':""}</div>
+    <div class="cmeta">${meta}</div></div>
+    <span class="cprice">${price}</span></label>`;
+}
+function bindChk(container){
+  container.querySelectorAll(".chk[data-key]").forEach(el=>{
+    const input = el.querySelector("input");
+    if (input.disabled) return;
+    input.addEventListener("change", ()=>{ state[el.dataset.key] = input.checked; update(); });
+  });
+}
+
+function renderExtras(){
+  const c = currentCourse(), age = studentAge();
+  const enabled = c && durationChosen();
+  els.secExtras.classList.toggle("disabled", !enabled);
+  if (!enabled){ els.extrasList.innerHTML=""; els.extrasMsgs.innerHTML=""; return; }
+
+  const wks = courseWeeks();
+  let html = "";
+
+  /* Compulsory */
+  html += chkHTML("_reg", true, "Registration fee", "Enrolment, pre-arrival placement test & class placement. Includes course books on courses of 2+ weeks.", gbp(FEES.registration), true);
+  if ((c.type==="weekly"||c.type==="choice") && wks===1)
+    html += chkHTML("_book", true, "Book supplement", "Applies to all 1-week courses.", gbp(FEES.bookSupplement1wk), true);
+  if (c.group==="junior" && age<12)
+    html += chkHTML("_u12", true, "Under-12 surcharge", "Covers the additional staffing UK law requires for younger students.", "£40/wk", true);
+  const packedLunch = age<=15 && state.accId==="none" && wks>0;
+  if (packedLunch)
+    html += chkHTML("_plunch", true, "Packed lunch at school", "£8 per weekday — compulsory for students aged 15 and under who are not in school accommodation.", "£40/wk", true);
+
+  /* Optional */
+  if (c.examFee)
+    html += chkHTML("examEntry", state.examEntry, c.examName, `${c.examDates}. Minimum 3 students per course.`, gbp(c.examFee));
+  html += chkHTML("insurance", state.insurance, "Insurance (Guard.me)", "Recommended cover for your stay.", "£5 + £8/wk");
+  if (c.group==="adult" && c.type!=="hours" && wks){
+    const lsWks = wks - summerWeeks(state.startDate, wks);
+    if (lsWks>0 && !packedLunch)   // lunch already covered by the compulsory packed lunch
+      html += chkHTML("hotLunch", state.hotLunch, "Hot lunch meal deal", "Main + drink, low season only.", "£45/wk");
+    const sWks = summerWeeks(state.startDate, wks);
+    if (sWks>0 && (c.id==="gen"||c.id==="int"))
+      html += chkHTML("activityPackage", state.activityPackage, "Summer activity package", "Afternoon activities + Saturday full-day excursion, 27 Jun – 22 Aug. Evening activities not included.", "£135/wk");
+  }
+
+  els.extrasList.innerHTML = html;
+  bindChk(els.extrasList);
+
+  let m = "";
+  if ((c.id==="gen"||c.id==="int") && wks && wks<10 && summerWeeks(state.startDate,wks)>0)
+    m += msgHTML("info", `A <b>summer course supplement of £55/week</b> applies to General & Intensive courses of 9 weeks or less between 27 Jun – 22 Aug — added automatically for each summer week.`);
+  m += msgHTML("info","Allergies & dietary needs must be declared in full before arrival — incomplete or incorrect information incurs a £100 charge. Government-sponsored students: £300 refundable deposit applies.");
+  els.extrasMsgs.innerHTML = m;
+}
+
+function renderTransfers(){
+  const c = currentCourse();
+  const enabled = c && durationChosen();
+  els.secTr.classList.toggle("disabled", !enabled);
+  if (!enabled) return;
+
+  const showDetail = state.trType!=="none";
+  els.trMethodField.hidden = !showDetail;
+
+  if (showDetail){
+    /* Collective coach available only when the stay touches the summer season */
+    const collectiveOK = inSummer(state.startDate) || (courseWeeks() && summerWeeks(state.startDate, courseWeeks())>0);
+    els.trMethod.innerHTML =
+      `<option value="taxi"${state.trMethod==="taxi"?" selected":""}>Private taxi</option>` +
+      (collectiveOK?`<option value="collective"${state.trMethod==="collective"?" selected":""}>Summer collective coach (Heathrow)</option>`:"");
+    if (!collectiveOK && state.trMethod==="collective") state.trMethod="taxi";
+
+    const taxi = state.trMethod==="taxi";
+    els.trAirportField.hidden = !taxi;
+    els.trGroupField.hidden = !taxi;
+    if (taxi){
+      els.trAirport.innerHTML = TAXIS.map(t=>
+        `<option value="${t.id}"${state.trAirport===t.id?" selected":""}>${t.name} · ${gbp(t.p13)} / ${gbp(t.p48)}</option>`).join("");
+      els.trGroup.value = state.trGroup;
+    }
+  } else {
+    els.trAirportField.hidden = true; els.trGroupField.hidden = true;
+  }
+
+  /* Optional transfer services */
+  let html = "";
+  if (showDetail){
+    if (c.group==="junior" && (state.trType==="departure"||state.trType==="return") && state.trMethod==="taxi")
+      html += chkHTML("umService", state.umService, "Unaccompanied Minor Service (departure)",
+        "Airline check-in and up to a 2-hour wait for students too young to fly alone (check the age with your airline). Extra hours £40/hr. Not available with collective transfers.",
+        gbp(FEES.umService)+"/student");
+    if (state.trMethod==="collective" && (state.trType==="departure"||state.trType==="return"))
+      html += chkHTML("checkInAssist", state.checkInAssist, "Departure check-in assistance",
+        "Includes a 1-hour wait; additional hours £40/hour.", gbp(FEES.collectiveCheckIn));
+  }
+  els.trOptions.innerHTML = html;
+  bindChk(els.trOptions);
+
+  let m = "";
+  if (showDetail && state.trMethod==="collective")
+    m += msgHTML("info", `Collective coach runs on selected Sundays, for flights 10am–5pm, £155 each way per person.<br><b>Arrivals:</b> ${COLLECTIVE.arrivals}<br><b>Departures:</b> ${COLLECTIVE.departures}<br>May involve an unsupervised wait of approx. 2–3 hours${c.group==="junior"?" — not available for students using the airline's Unaccompanied Minor Service":""}.`);
+  if (showDetail && state.trMethod==="taxi")
+    m += msgHTML("info","Pick-up point confirmed once we have your flight details. £40/hour waiting charge if the driver waits over 2 hours after landing. Under-18s may be refused entry by the UK Border Agency without written parental consent or proof of onward travel.");
+  els.trMsgs.innerHTML = m;
+}
+
+/* ---- Quote panel ---- */
+function renderQuote(res){
+  if (!res.groups.length){
+    els.qBody.innerHTML = `<p class="qempty">${!state.dob
+      ? "Enter the student's date of birth to begin."
+      : !res.course ? "Choose a course to start building your quote."
+      : "Choose a start date to see your prices."}</p>`;
+  } else {
+    els.qBody.innerHTML = res.groups.map(g=>
+      `<div class="qgroup"><div class="gname">${g.gname}</div>` +
+      g.lines.map(l=>`<div class="qline"><span class="ql">${l.ql}</span><span class="qv">${gbp(l.qv)}</span></div>`).join("") +
+      `</div>`).join("");
+  }
+  els.qTitle.textContent = res.course ? res.course.name : "Instant quote";
+  els.pdfBtn.disabled = !(res.groups.length && durationChosen());
+  const t = gbp(res.total);
+  if (els.qTotal.textContent !== t){
+    els.qTotal.textContent = t; els.mTotal.textContent = t;
+    els.qTotal.classList.add("bump");
+    setTimeout(()=>els.qTotal.classList.remove("bump"), 220);
+  }
+}
+
+function renderProgress(){
+  const steps = els.progress.querySelectorAll(".pstep");
+  const done = [
+    !!state.dob,
+    !!(currentCourse() && state.startDate && durationChosen()),
+    !!(currentCourse() && durationChosen() && state.accId),
+    !!(currentCourse() && durationChosen() && state.accId)
+  ];
+  let activeSet = false;
+  steps.forEach((s,i)=>{
+    s.classList.toggle("done", done[i]);
+    s.classList.remove("active");
+    if (!done[i] && !activeSet){ s.classList.add("active"); activeSet=true; }
+  });
+}
+
+/* ==========================================================================
+   7 · PDF QUOTE (print-to-PDF of a clean quotation sheet)
+   ========================================================================== */
+function buildPrintSheet(res){
+  const c = res.course;
+  const today = new Date();
+  const rows = res.groups.map(g =>
+    `<tr class="grp"><td colspan="2">${g.gname}</td></tr>` +
+    g.lines.map(l=>`<tr><td>${l.ql}</td><td class="num">${gbp(l.qv)}</td></tr>`).join("")
+  ).join("");
+  const durTxt = c.type==="hours"
+    ? c.packages[state.otoPackage].label
+    : `${courseWeeks()} week${courseWeeks()>1?"s":""} · ends ${labelDate(courseEnd(state.startDate, courseWeeks()))} 2027`;
+
+  els.printSheet.innerHTML = `
+    <div class="phead">
+      <div>
+        <h1>Course Quotation · 2027</h1>
+        <div style="font-size:12.5px;color:var(--ink-soft);margin-top:4px">Generated ${labelDate(today)} ${today.getFullYear()}</div>
+      </div>
+      <div class="pright">
+        <img class="plogo" src="${LOGOS.school}" alt="Southbourne School of English logo">
+        <div class="school"><b>Southbourne School of English</b><br>
+        30 Beaufort Road, Bournemouth BH6 5AL<br>
+        +44 (0)1202 422300 · southbourneschool.co.uk · Est. 1966</div>
+      </div>
+    </div>
+    <div class="pmeta">
+      <span>Course: <b>${c.name}</b></span>
+      <span>Start: <b>${labelDate(state.startDate)} 2027</b></span>
+      <span>Duration: <b>${durTxt}</b></span>
+      <span>Age on start date: <b>${studentAge()}</b></span>
+    </div>
+    <table>
+      <thead><tr><th>Item</th><th>Price</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>
+    <div class="ptotal"><span class="tl">Grand total</span><span class="tv">${gbp(res.total)}</span></div>
+    <p class="pnotes">This is a quotation only, not a booking or invoice. All prices are taken from the
+    Southbourne School of English Price List 2027 and are subject to availability and to our Conditions of
+    Enrolment (southbourneschool.co.uk/terms-conditions). Allergies and dietary needs must be declared in
+    full before arrival. To book, or for any questions, contact the school on +44 (0)1202 422300.</p>
+    <div class="paccreds">
+      <span class="ptxt"><b>Accredited &amp; trusted since 1966</b><br>British Council accredited · Member of IALC, Quality English &amp; English UK</span>
+      <span class="plogos">
+        <img src="${LOGOS.bc}" alt="Accredited by the British Council">
+        <img src="${LOGOS.ialc}" alt="Member of IALC">
+        <img src="${LOGOS.qe}" alt="Member of Quality English">
+        <img src="${LOGOS.euk}" alt="Member of English UK">
+      </span>
+    </div>`;
+}
+
+/* ==========================================================================
+   8 · MASTER UPDATE + EVENT LISTENERS
+   ========================================================================== */
+function update(){
+  renderCourses();
+  renderStartDate();
+  renderDuration();
+  renderCourseBadgesAndMsgs();
+  renderAccommodation();
+  renderExtras();
+  renderTransfers();
+  renderProgress();
+  renderQuote(calculate());
+}
+
+els.dob.addEventListener("input", ()=>{
+  formatDobInput();
+  const { dob, complete } = parseDob();
+  const changed = (dob && state.dob && dob.getTime()!==state.dob.getTime()) || (!!dob !== !!state.dob);
+  state.dob = dob;
+  if (changed){
+    state.courseId=null; state.startDate=null; state.weeks=null; state.otoPackage=null; state.accId=null;
+  }
+  renderStudentMsgs(complete);
+  update();
+});
+els.dob.addEventListener("blur", ()=>{ renderStudentMsgs(els.dob.value.length>0); });
+
+els.startSel.addEventListener("change", e=>{
+  state.startDate = parseISO(e.target.value);
+  update();  // duration caps & eligibility re-validated automatically
+});
+els.trType.addEventListener("change", e=>{ state.trType = e.target.value; update(); });
+els.trMethod.addEventListener("change", e=>{ state.trMethod = e.target.value; update(); });
+els.trAirport.addEventListener("change", e=>{ state.trAirport = e.target.value; update(); });
+els.trGroup.addEventListener("change", e=>{ state.trGroup = e.target.value; update(); });
+
+els.pdfBtn.addEventListener("click", ()=>{
+  const res = calculate();
+  if (!res.groups.length) return;
+  buildPrintSheet(res);
+  window.print();   // user chooses "Save as PDF" in the print dialog
+});
+
+/* ---- Reset: clear every selection and start again from the top ---- */
+function resetCalculator(){
+  Object.assign(state, {
+    dob:null, courseId:null, startDate:null,
+    weeks:null, otoPackage:null,
+    accId:null, accWeeks:null, accSameAsCourse:true,
+    specialDiet:false, roomRetainerWeeks:0,
+    insurance:false, hotLunch:false, activityPackage:false, examEntry:true,
+    trType:"none", trMethod:"taxi", trAirport:"lhr", trGroup:"p13",
+    umService:false, checkInAssist:false
+  });
+  els.dob.value = "";
+  els.dob.classList.remove("invalid");
+  els.studentMsgs.innerHTML = "";
+  els.trType.value = "none";
+  els.trGroup.value = "p13";
+  els.printSheet.innerHTML = "";
+  update();
+  window.scrollTo({ top:0, behavior:"smooth" });
+  els.dob.focus({ preventScroll:true });
+}
+els.resetBtn.addEventListener("click", ()=>{
+  const started = state.dob || els.dob.value.length > 0;
+  if (!started || confirm("Start again? This will clear all of your current selections.")) resetCalculator();
+});
+
+/* Populate logo & accreditation images (kept in JS so each is embedded once) */
+var _sl=function(i,s){var e=document.getElementById(i);if(e)e.src=s};_sl("logoHero",LOGOS.school);
+_sl("logoBC",LOGOS.bc);
+_sl("logoIALC",LOGOS.ialc);
+_sl("logoQE",LOGOS.qe);
+$("#logoEUK").src  = LOGOS.euk;
+
+update();
+
+})();
+</script>
+</body>
 </html>
