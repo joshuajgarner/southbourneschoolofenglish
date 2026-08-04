@@ -1847,7 +1847,6 @@ const FEES = {
   registration: 120,                     // all courses
   bookSupplement1wk: 50,                 // compulsory on 1-week courses
   insuranceBase: 5, insurancePerWeek: 8, // Guard.me
-  hotLunchPerWeek: 45,                   // LS only, adults
   packedLunchPerWeek: 40,                // £8/weekday — compulsory for students aged 15 and under with no school accommodation
   ssCourseSupplementPerWeek: 55,         // General & Intensive, courses under 10 weeks, summer weeks
   ssActivityPackagePerWeek: 135,         // adults, summer weeks
@@ -1965,7 +1964,7 @@ const state = {
   accSameAsCourse:true,
   specialDiet:false,
   roomRetainerWeeks:0,
-  insurance:false, hotLunch:false, activityPackage:false,
+  insurance:false, activityPackage:false,
   examEntry:true,
   trType:"none", trMethod:"taxi", trAirport:"lhr", trGroup:"p13",
   umService:false, checkInAssist:false
@@ -2231,10 +2230,6 @@ function calculate(){
     const iw = Math.max(wks, accWeeks, 1);
     line(e, `Insurance (Guard.me) · £5 + ${iw} wk × £8`, FEES.insuranceBase + FEES.insurancePerWeek*iw);
   }
-  if (state.hotLunch && c.group==="adult" && wks){
-    const lw = wks - summerWeeks(state.startDate, wks);
-    if (lw) line(e, `Hot lunch meal deal (low season) · ${lw} wk × £45`, FEES.hotLunchPerWeek*lw);
-  }
   add("Fees & extras", e);
 
   /* ---- Transfers ---- */
@@ -2348,7 +2343,7 @@ function renderCourses(){
       state.courseId = o.dataset.course;
       state.startDate = null; state.weeks = null; state.otoPackage = null;
       state.accId = null; state.specialDiet=false; state.roomRetainerWeeks=0;
-      state.activityPackage=false; state.hotLunch=false; state.examEntry=true;
+      state.activityPackage=false; state.examEntry=true;
       update();
     });
   });
@@ -2596,9 +2591,6 @@ function renderExtras(){
     html += chkHTML("examEntry", state.examEntry, c.examName, `${c.examDates}. Minimum 3 students per course.`, gbp(c.examFee));
   html += chkHTML("insurance", state.insurance, "Insurance (Guard.me)", "Recommended cover for your stay.", "£5 + £8/wk");
   if (c.group==="adult" && c.type!=="hours" && wks){
-    const lsWks = wks - summerWeeks(state.startDate, wks);
-    if (lsWks>0 && !packedLunch)   // lunch already covered by the compulsory packed lunch
-      html += chkHTML("hotLunch", state.hotLunch, "Hot lunch meal deal", "Main + drink, low season only.", "£45/wk");
     const sWks = summerWeeks(state.startDate, wks);
     if (sWks>0 && (c.id==="gen"||c.id==="int"))
       html += chkHTML("activityPackage", state.activityPackage, "Summer activity package", "Afternoon activities + Saturday full-day excursion, 27 Jun – 22 Aug. Evening activities not included.", "£135/wk");
@@ -2808,7 +2800,7 @@ function resetCalculator(){
     weeks:null, otoPackage:null,
     accId:null, accWeeks:null, accSameAsCourse:true,
     specialDiet:false, roomRetainerWeeks:0,
-    insurance:false, hotLunch:false, activityPackage:false, examEntry:true,
+    insurance:false, activityPackage:false, examEntry:true,
     trType:"none", trMethod:"taxi", trAirport:"lhr", trGroup:"p13",
     umService:false, checkInAssist:false
   });
